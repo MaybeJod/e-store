@@ -1,0 +1,41 @@
+#productSection {
+    display: flex;
+
+    justify-content: center;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+    justify-content: center;
+    width: 80dvw;
+
+    .product {
+        border-radius: 1rem;
+        box-shadow: 6px 8px 25px -2px rgba(0,0,0,0.64);
+        
+        img {
+            width: fit-content;
+
+        }
+        .product-category {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #666666;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+
+        }
+        span {
+
+        }
+        .product-rating {
+
+        }
+    }
+}
