@@ -8,3 +8,6 @@ To build run "npm run build"
 To start the project in development mode run "npm run dev"
 
 To deploy run "npm run deploy"
+
+
+# Jasmiz e-store
