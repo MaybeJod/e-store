@@ -9,7 +9,6 @@ import fetchProduct from "./assets/js/fetchProduct";
 /* display product */
 import displayProduct from "./assets/js/displayProduct";
 
-
 // for all products
 //"https://fakestoreapi.com/products"
 
