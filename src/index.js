@@ -8,9 +8,7 @@ import "./assets/styles/productSection.css"
 import fetchProduct from "./assets/js/fetchProduct";
 /* display product */
 import displayProduct from "./assets/js/displayProduct";
-/* Testing-----*/
-import { test } from "./assets/js/test";
-test();
+
 
 // for all products
 //"https://fakestoreapi.com/products"
