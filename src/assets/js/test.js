@@ -1,5 +1,7 @@
 
-console.log("Hello, World!");
+export function test(){
+  console.log("Hello, World!");
+}
 
 export let a = 5;
 export let b = 2;
