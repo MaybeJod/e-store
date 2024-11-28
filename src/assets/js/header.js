@@ -1,1 +1,0 @@
-const rawText = element.textContent.trim();
