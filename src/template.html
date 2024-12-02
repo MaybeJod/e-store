@@ -6,14 +6,27 @@
 		<title>Fake E-store</title>
 	</head>
 	<body>
-		<header>This is the header</header>
-		<nav>
+		<nav class="page-container">
+			<div class="nav-logo">
+				<a href="#">
+					<h1>jasmiz</h1>
+					<img src="./assets/icons-and-logo/Jasmiz-Logo.svg" alt="logo" />
+				</a>
+			</div>
 			<ul>
-				<li><a href="#">link one</a></li>
-				<li><a href="#">link two</a></li>
-				<li><a href="#">link three</a></li>
-				<li><a href="#">link three</a></li>
+				<li><button class="nav-buttons">Men</button></li>
+				<li><button class="nav-buttons">Women</button></li>
+				<li><button class="nav-buttons">Accessories</button></li>
+				<li><button class="nav-buttons">Electronics</button></li>
 			</ul>
+			<div class="nav-searchbar">
+				<input type="text" placeholder="Search" />
+			</div>
+			<div class="nav-shopping-cart">
+				<img
+					src="./assets/icons-and-logo/Shopping-Cart-Icon.svg"
+					alt="shopping cart" />
+			</div>
 		</nav>
 		<main class="page-container">
 			<section id="content"></section>
@@ -22,8 +35,6 @@
 			<section id="cart"></section>
 			<section id="checkout"></section>
 		</main>
-		<footer>
-			<p>footer</p>
-		</footer>
+		<footer></footer>
 	</body>
 </html>

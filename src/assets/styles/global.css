@@ -25,3 +25,72 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--body-font);
+    .nav-logo {
+        width: 3rem;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        a {
+            display: flex;
+            text-decoration: none;
+            color: var(--main-black);
+            & :hover {
+                color: var(--main-yellow);
+            }
+            h1 {
+                font-family: var(--heading-font);
+                font-size: 2rem;
+                text-transform: uppercase;
+            }
+            img {
+                width: 40%;
+                height: auto;
+            }
+        }
+    }
+    ul {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        & :hover {
+            color: var(--main-yellow);
+        }
+        li {
+            list-style: none;
+            .nav-buttons {
+                text-decoration: none;
+                color: inherit;
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                font: inherit;
+                cursor: pointer;
+                
+            }
+        }
+        
+    }
+    .nav-searchbar {
+
+        input {
+            padding: 0.2rem 1rem 0.2rem 1rem;
+            border-radius: 1000px;
+        }
+    }
+    .nav-shopping-cart {
+
+    }
+}
+
+footer {
+    
+}
