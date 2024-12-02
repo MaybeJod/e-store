@@ -1,13 +1,18 @@
+/* import heading font */
 @font-face {
     font-family: "Underrated";
     src: url(../fonts/UNDERRATED-UltraBold\ Personal\ Use.otf);
 }
 
+/* import body font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --main-white: #ffffff;
     --main-black: #000000;
     --main-yellow: #ffff00;
-    --heading-font: "Underrated"
+    --heading-font: "Underrated";
+    --body-font:"Noto Sans", serif;
 }
 
 .page-container {
