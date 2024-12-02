@@ -6,34 +6,59 @@
 		<title>Fake E-store</title>
 	</head>
 	<body>
-		<nav class="page-container">
-			<div class="nav-logo">
-				<a href="#">
-					<h1>jasmiz</h1>
-					<img src="./assets/icons-and-logo/Jasmiz-Logo.svg" alt="logo" />
-				</a>
-			</div>
-			<ul>
-				<li><button class="nav-buttons" id="product-men">Men</button></li>
-				<li><button class="nav-buttons" id="product-women">Women</button></li>
-				<li>
-					<button class="nav-buttons" id="product-accessories">
-						Accessories
-					</button>
-				</li>
-				<li>
-					<button class="nav-buttons" id="product-electronics">
-						Electronics
-					</button>
-				</li>
-			</ul>
-			<div class="nav-searchbar">
-				<input type="text" placeholder="Search" />
-			</div>
-			<div class="nav-shopping-cart">
-				<img
-					src="./assets/icons-and-logo/Shopping-Cart-Icon.svg"
-					alt="shopping cart" />
+		<nav>
+			<div class="page-container">
+				<div class="nav-logo">
+					<a href="#">
+						<img src="./assets/icons-and-logo/Jasmiz-Logo.svg" alt="" />
+						<h1>jasmiz</h1>
+					</a>
+				</div>
+				<div class="nav-links">
+					<div class="nav-dropdown">
+						<button class="nav-drop-button">All Categories ▼</button>
+						<div class="nav-dropdown-content">
+							<hr />
+							<ul>
+								<li>
+									<button class="nav-buttons" id="product-men">Men</button>
+								</li>
+								<li>
+									<button class="nav-buttons" id="product-women">Women</button>
+								</li>
+								<li>
+									<button class="nav-buttons" id="product-accessories">
+										Accessories
+									</button>
+								</li>
+								<li>
+									<button class="nav-buttons" id="product-electronics">
+										Electronics
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<span>Top Rated</span>
+					<button class="nav-about-us">About us</button>
+				</div>
+				<div class="nav-personal-links">
+					<div class="nav-liked-items">
+						<img
+							src="./assets/icons-and-logo/Favorite Icon.svg"
+							alt="favorite icon" />
+					</div>
+					<div class="nav-profile">
+						<img
+							src="./assets/icons-and-logo/Material Icon Person.svg"
+							alt="profile icon" />
+					</div>
+					<div class="nav-shopping-cart">
+						<img
+							src="./assets/icons-and-logo/Shopping-Cart-Icon.svg"
+							alt="shopping cart" />
+					</div>
+				</div>
 			</div>
 		</nav>
 		<main class="page-container">
@@ -44,18 +69,50 @@
 			<section id="checkout"></section>
 		</main>
 		<footer>
-			<div class="footer-logo-and-text">
-				<h1>jasmiz e-store</h1>
-				<p>
-					We have everything from clothes, accessories to electronics, that
-					suits your style. Join the Jasmiz gang today
-				</p>
-				<div class="footer-social-links">
-					<ul>
-						<li>twitter</li>
-						<li>instagram</li>
-						<li>github</li>
-					</ul>
+			<div class="page-container">
+				<div class="footer-big-logo">
+					<h1>jasmiz</h1>
+					<img
+						src="./assets/icons-and-logo/Jasmiz-Logo.svg"
+						alt="jasmiz logo" />
+				</div>
+				<div class="footer-upper">
+					<div class="footer-logo-and-text">
+						<h1>jasmiz e-store</h1>
+						<p>
+							We have everything from clothes, accessories to electronics, that
+							suits your style. Join the Jasmiz gang today
+						</p>
+						<div class="footer-social-links">
+							<ul>
+								<li><a href="#">twitter</a></li>
+								<li><a href="#">instagram</a></li>
+								<li>
+									<a href="https://github.com/MaybeJod/e-store" target="_blank"
+										>github</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer-company-links">
+						<h2>company</h2>
+						<ul>
+							<li>About</li>
+							<li>Products</li>
+						</ul>
+					</div>
+					<div class="footer-help-links">
+						<h2>help</h2>
+						<ul>
+							<li>Terms & Conditions</li>
+							<li>Privacy Policy</li>
+						</ul>
+					</div>
+				</div>
+				<hr />
+				<div class="footer-lower">
+					<span>JASMIZ © 2024-2024, All Rights Reserved</span>
 				</div>
 			</div>
 		</footer>
