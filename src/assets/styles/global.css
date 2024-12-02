@@ -1,6 +1,13 @@
+@font-face {
+    font-family: "Underrated";
+    src: url(../fonts/UNDERRATED-UltraBold\ Personal\ Use.otf);
+}
+
 :root {
     --main-white: #ffffff;
     --main-black: #000000;
+    --main-yellow: #ffff00;
+    --heading-font: "Underrated"
 }
 
 .page-container {
