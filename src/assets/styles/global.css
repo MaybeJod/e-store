@@ -39,10 +39,7 @@ nav {
         font-family: var(--body-font);
         color: var(--main-white);
         .nav-logo {
-            width: 3rem;
-            height: auto;
-            display: flex;
-            align-items: center;
+            max-width: 14vw;
             a {
                 display: flex;
                 text-decoration: none;
@@ -53,11 +50,11 @@ nav {
                 }
                 h1 {
                     font-family: var(--heading-font);
-                    font-size: 2rem;
+                    font-size: 2vw;
                     text-transform: uppercase;
                 }
                 img {
-                    width: 40%;
+                    width: 3vw;
                     height: auto;
                     svg {
                         color-fill:var(--main-white);
@@ -151,7 +148,7 @@ footer {
             gap: 3rem;
             h1 {
                 font-family: var(--heading-font);
-                font-size: 12rem;
+                font-size: 12vw;
                 text-transform: uppercase;
                 line-height: 12rem;
             }
