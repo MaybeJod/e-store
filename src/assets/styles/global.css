@@ -140,10 +140,10 @@ footer {
     display: flex;
     justify-content: center;
     .page-container {
-
+        width: 80dvw;
         .footer-big-logo {
             display: flex;
-            width: 100%;
+
             justify-content: center;
             gap: 3rem;
             h1 {
