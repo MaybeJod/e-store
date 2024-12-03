@@ -59,3 +59,4 @@ const buttonAccessories = document.querySelector('#product-accessories');
             sortProducts(products);
         }) 
     })
+ 
