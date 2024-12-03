@@ -204,13 +204,97 @@ padding: 1%;
 }
 
 .view-all-btn {
-  background: none; /* No background image */
-  background-color: transparent; /* Transparent background color */
-  color: #000000; /* White text */
-  font-family: var(--heading-font); /* Use your heading font variable */
+  background: none; 
+  background-color: transparent; 
+  color: #000000; 
+  font-family: var(--heading-font); 
   font-size: 1rem;
-  padding: 20px 40px; /* Increased padding (adjust as needed) */
-  border: 2px solid #000000; /* Black border */
-  border-radius: 100px; /* Rounded corners */
-  cursor: pointer; /* Adds a pointer on hover for buttons */
+  padding: 20px 40px;
+  border: 5px solid #000000; 
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s, border-radius 0.1s; /* Smooth transition */
+}
+
+.view-all-btn:hover {
+  background-color: var(--main-yellow); /* Black background on hover */
+  color: black; /* White text */
+  border-radius: 100px; 
+}
+.separator{
+  border-bottom: 0.5px solid #0000001f;
+  width: 100%;
+  margin: 1%;
+}
+
+.trending-section h1{
+  font-family: var(--heading-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trending-top{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 100%; /* Adjust as needed */
+  margin: 3%;
+}
+
+.trending-top-left{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.trending-top-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.trending-top-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.trending-top-left img {
+  width: 100%;
+  height: 100%;
+}
+
+.trending-section img{
+
+  border-radius: 15px;
+}
+
+.trending-bot{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 100%; /* Adjust as needed */
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.trending-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trending-bot-right{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
 }
