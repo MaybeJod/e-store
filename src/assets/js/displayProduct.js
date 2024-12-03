@@ -17,7 +17,7 @@ export default async function displayProduct(product) {
 }
 
 // Helper function to create a product element
-function createProductElement(product) {
+export function createProductElement(product) {
 	const productElement = document.createElement("article");
 	productElement.classList.add("product");
 
