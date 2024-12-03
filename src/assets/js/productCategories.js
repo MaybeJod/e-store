@@ -1,17 +1,15 @@
-
-
 const productSection = document.querySelector("#productSection");
 export async function sortProducts(product) {
-  let productContainer = document.querySelector(".product-container");
-  if(productContainer === undefined  || productContainer === null ){
-    productContainer = document.createElement("div");
-	  productContainer.classList.add("product-container");
-    productSection.appendChild(productContainer);
-  } else {
-    productContainer.innerHTML = "";
-  }
-	
-  // Check if the input is an array or a single object
+	let productContainer = document.querySelector(".product-container");
+	if (productContainer === undefined || productContainer === null) {
+		productContainer = document.createElement("div");
+		productContainer.classList.add("product-container");
+		productSection.appendChild(productContainer);
+	} else {
+		productContainer.innerHTML = "";
+	}
+
+	// Check if the input is an array or a single object
 	const products = Array.isArray(product) ? product : [product];
 
 	products.forEach((productItem) => {
