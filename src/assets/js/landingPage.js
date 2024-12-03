@@ -1,3 +1,5 @@
+export function createLandingPage() {
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const link = document.createElement("link");
@@ -62,3 +64,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(hero);
     document.body.appendChild(heroBanner);
   });
+
+}

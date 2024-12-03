@@ -18,6 +18,10 @@ import displayProduct from "./assets/js/displayProduct";
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
 
+/* landing-page */
+import { createLandingPage } from 'src/assets/js/landingPage.js';
+import "src/assets/styles/hero.css";
+
 // for all products
 //"https://fakestoreapi.com/products"
 
