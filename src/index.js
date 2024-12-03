@@ -19,6 +19,8 @@ import fetchProduct from "./assets/js/fetchProduct";
 import { createLandingPage } from "./assets/js/landingPage.js"; // Correct path assuming landingPage.js is in assets/js
 */
 
+/* display product */
+//import displayProduct from "./assets/js/displayProduct";
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
 
@@ -46,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	createLandingPageProduct();
   });
 */
+//document.addEventListener("DOMContentLoaded", createLandingPageProduct);
  
 const buttonMen = document.querySelector("#product-men");
 buttonMen.addEventListener("click", () => {
@@ -75,10 +78,9 @@ buttonAccessories.addEventListener("click", () => {
 const buttonElectronics = document.querySelector("#product-electronics");
 buttonElectronics.addEventListener("click", () => {
 	const apiUrl_electronics =
-"https://fakestoreapi.com/products/category/electronics";
+		"https://fakestoreapi.com/products/category/electronics";
 	fetchProduct(apiUrl_electronics).then((products) => {
 		sortProducts(products);
 	});
 });
-
 
