@@ -1,23 +1,22 @@
-//import "../styles/productSection.css"
 // display product article
 export default async function displayProduct(product) {
 	const productSection = document.querySelector("#productSection");
-	const productContainer = document.createElement("div");
-	productContainer.classList.add("product-container");
-	productContainer.innerHTML = "";
+	const menProductsContainer = document.createElement("div");
+	menProductsContainer.classList.add("men-product-container");
+	menProductsContainer.innerHTML = "";
 
-	productSection.appendChild(productContainer);
+	productSection.appendChild(menProductsContainer);
 	// Check if the input is an array or a single object
 	const products = Array.isArray(product) ? product : [product];
 
 	products.forEach((productItem) => {
 		const productElement = createProductElement(productItem);
-		productContainer.appendChild(productElement);
+		menProductsContainer.appendChild(productElement);
 	});
 }
 
 // Helper function to create a product element
-function createProductElement(product) {
+export function createProductElement(product) {
 	const productElement = document.createElement("article");
 	productElement.classList.add("product");
 

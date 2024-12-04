@@ -9,14 +9,16 @@
 		<nav>
 			<div class="page-container">
 				<div class="nav-logo">
-					<a href="#">
+					<a href="#" id="home-reset">
 						<img src="./assets/icons-and-logo/Jasmiz-Logo.svg" alt="" />
 						<h1>jasmiz</h1>
 					</a>
 				</div>
 				<div class="nav-links">
 					<div class="nav-dropdown">
-						<button class="nav-drop-button">All Categories ▼</button>
+						<button class="nav-drop-button" id="product-all">
+							All Categories ▼
+						</button>
 						<div class="nav-dropdown-content">
 							<hr />
 							<ul>
@@ -54,17 +56,19 @@
 							alt="profile icon" />
 					</div>
 					<div class="nav-shopping-cart">
-						<img
-							src="./assets/icons-and-logo/Shopping-Cart-Icon.svg"
-							alt="shopping cart" />
+						<button id="viewCartButton">
+							<img
+								src="./assets/icons-and-logo/Shopping-Cart-Icon.svg"
+								alt="shopping cart" />
+						</button>
 					</div>
 				</div>
 			</div>
 		</nav>
 		<main class="page-container">
-			<section id="content"></section>
 			<section id="heroSection"></section>
 			<section id="productSection"></section>
+			<section id="topRated"></section>
 			<section id="cart"></section>
 			<section id="checkout"></section>
 		</main>
@@ -85,8 +89,16 @@
 						</p>
 						<div class="footer-social-links">
 							<ul>
-								<li><a href="#">twitter</a></li>
-								<li><a href="#">instagram</a></li>
+								<li>
+									<a href="https://github.com/MaybeJod/e-store" target="_blank"
+										>twitter</a
+									>
+								</li>
+								<li>
+									<a href="https://github.com/MaybeJod/e-store" target="_blank"
+										>instagram</a
+									>
+								</li>
 								<li>
 									<a href="https://github.com/MaybeJod/e-store" target="_blank"
 										>github</a
@@ -98,10 +110,10 @@
 					<div class="footer-company-links">
 						<h2>company</h2>
 						<ul>
-							<li>About</li>
-							<li>Products</li>
-							<li>Terms & Conditions</li>
-							<li>Privacy Policy</li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Products</a></li>
+							<li><a href="#">Terms & Conditions</a></li>
+							<li><a href="#">Privacy Policy</a></li>
 						</ul>
 					</div>
 				</div>

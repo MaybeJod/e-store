@@ -1,0 +1,302 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  /* color-scheme: dark light; */
+  hanging-punctuation: first last;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100svh;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  font-style: italic;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: 75ch;
+  text-wrap: pretty;
+}
+
+button,
+input:is([type="submit"], [type="button"], [type="checkbox"]) {
+  color: inherit;
+  cursor: pointer;
+  letter-spacing: inherit;
+}
+
+input[type="number"] {
+  appearance: normal;
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+table {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
+
+/* import heading font */
+@font-face {
+    font-family: "Underrated";
+    src: url(../fonts/UNDERRATED-UltraBold\ Personal\ Use.otf);
+}
+
+/* import body font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --main-white: #ffffff;
+    --main-black: #000000;
+    --main-yellow: #ffff00;
+    --heading-font: "Underrated";
+    --body-font:"Noto Sans", serif;
+}
+
+.page-container {
+    width: 90dvw;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero{
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--heading-font);
+    height: 38rem;
+}
+
+.hero-left{
+    flex: 1;
+    flex-direction: column;
+    max-width: 60%;
+    height: 100%;
+}
+
+.hero-left h1{
+    font-size: 17rem;
+    color: #ffff00;
+    text-shadow: 25px 25px 0 black;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.hero-left a{
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff00;
+  color: #000000;
+  margin-left: 2%;
+  margin-right: 60%;
+  padding: 2%;
+}
+
+.hero-right{
+    flex: 1;
+    max-width: 40%;
+    justify-content: flex-end;
+}
+
+.hero-right img{
+    justify-content: flex-end;
+    position: relative;
+    width: 75%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+}
+
+.hero-right h3{
+position: absolute;
+font-size: 2rem;
+top: 450px;
+color: #000000;
+background-color: #ffff00;
+right: 100px;
+padding: 1%;
+}
+
+.hero-banner{
+  padding-top: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: var(--heading-font);
+    background-color: #000000;
+    color: #ffff00;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.8rem;
+    padding: 3%;
+
+}
+
+.hero-logo{
+    display: flex;
+    width: 4%;
+    justify-content: center;
+    align-items: center;
+    fill: #ffff00;
+}
+.products{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.arrivals{
+  font-family: var(--heading-font);
+}
+
+.arrivals-products{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates 2 equal-width columns */
+  grid-gap: 2%; /* Adds space between the items */
+}
+
+
+.product-one{
+  font-family: "Noto Sans", sans-serif;
+}
+
+.product-one img{
+  border-radius: 3%;
+}
+
+.view-all-btn {
+  background: none; 
+  background-color: transparent; 
+  color: #000000; 
+  font-family: var(--heading-font); 
+  font-size: 1rem;
+  padding: 20px 40px;
+  border: 5px solid #000000; 
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s, border-radius 0.1s; /* Smooth transition */
+}
+
+.view-all-btn:hover {
+  background-color: var(--main-yellow); /* Black background on hover */
+  color: black; /* White text */
+  border-radius: 100px; 
+}
+.separator{
+  border-bottom: 0.5px solid #0000001f;
+  width: 100%;
+  margin: 1%;
+}
+
+.trending-section h1{
+  font-family: var(--heading-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trending-top{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 100%; /* Adjust as needed */
+  margin: 3%;
+}
+
+.trending-top-left{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.trending-top-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.trending-top-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.trending-top-left img {
+  width: 100%;
+  height: 100%;
+}
+
+.trending-section img{
+
+  border-radius: 15px;
+}
+
+.trending-bot{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 100%; /* Adjust as needed */
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.trending-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trending-bot-right{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
+}

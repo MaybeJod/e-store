@@ -1,12 +1,12 @@
 
-const checkoutElement = document.getElementById('checkout');
 
 export default function checkoutPage() {
+    const checkoutElement = document.getElementById('checkout');
     if (checkoutElement) {
         console.log('Checkout page is loaded');
     }
 
-    const createForm = (title) => {
+/*     const createForm = (title) => {
         const checkoutFormContainer = document.createElement('div');
         checkoutFormContainer.classList.add('checkout-form-container');
 
@@ -21,7 +21,7 @@ export default function checkoutPage() {
         checkoutFormContainer.appendChild(form);
 
         return checkoutFormContainer;
-    };
+    }; */
 
     //main container for the FORM
     const checkoutContentContainer = document.createElement('div');
