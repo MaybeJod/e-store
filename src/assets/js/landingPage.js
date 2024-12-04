@@ -72,7 +72,7 @@ export function createLandingPage() {
 		document.querySelector("#heroSection").appendChild(hero);
 		document.querySelector("#heroSection").appendChild(heroBanner);
         document.querySelector("#heroSection").appendChild(productsHeader);
-        document.querySelector("#productSection").appendChild();
+        //document.querySelector("#productSection").appendChild();
 
         //    <div class="trending-section">
        //     <h1>TRENDING</h1>
