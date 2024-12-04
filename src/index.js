@@ -1,6 +1,7 @@
 /*-----styles-----*/
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
+import "./assets/styles/checkoutPage.css";
 /*-----imgs and icons-----*/
 import "./assets/icons-and-logo/Jasmiz-Logo.svg";
 import "./assets/icons-and-logo/Shopping-Cart-Icon.svg";
@@ -13,6 +14,9 @@ import "./assets/styles/productSection.css";
 import fetchProduct from "./assets/js/fetchProduct";
 /* display product */
 import displayProduct from "./assets/js/displayProduct";
+/* display checkoutpage */
+import checkoutPage from "./assets/js/checkoutPage";
+checkoutPage();
 
 // for all products
 //"https://fakestoreapi.com/products"
