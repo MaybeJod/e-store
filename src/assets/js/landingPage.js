@@ -71,6 +71,19 @@ export function createLandingPage() {
 	document.querySelector("#heroSection").appendChild(heroBanner);
 	document.querySelector("#heroSection").appendChild(productsHeader);
 
+
+		// Append Hero and Hero Banner to the Body
+		document.querySelector("#heroSection").appendChild(hero);
+		document.querySelector("#heroSection").appendChild(heroBanner);
+        document.querySelector("#heroSection").appendChild(productsHeader);
+        //document.querySelector("#productSection").appendChild();
+
+        //    <div class="trending-section">
+       //     <h1>TRENDING</h1>
+
+	});
+
 	//    <div class="trending-section">
 	//     <h1>TRENDING</h1>
+
 }

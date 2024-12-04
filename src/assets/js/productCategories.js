@@ -1,5 +1,10 @@
+
+const productSection = document.querySelector("#productSection");
+//const heroSection = document.querySelector('#heroSection');
+//const productCategories = document.querySelector('.lp_productCategory');
+//const main = document.getElementsByTagName('main')
+
 export async function sortProducts(product) {
-	const productSection = document.querySelector("#productSection");
 
 	let productContainer = document.querySelector(".product-container");
 
@@ -35,4 +40,10 @@ function createProductElement(product) {
     `;
 
 	return productElement;
+}
+
+export function removeDivFromLandingPage() {
+	document.getElementById('heroSection').style.display = 'none';
+	document.querySelector('.lp_productCategory').style.display = 'none';
+	document.querySelector('.allProducts_btn').style.display = 'none';
 }

@@ -34,6 +34,7 @@ import { createTrendingSection } from "./assets/js/trendingProducts.js";
 //import displayProduct from "./assets/js/displayProduct";
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
+import {removeDivFromLandingPage} from "./assets/js/productCategories";
 
 /* cart */
 import renderCartPage from "./assets/js/cart/cartPage.js";
@@ -75,6 +76,7 @@ buttonMen.addEventListener("click", () => {
 		"https://fakestoreapi.com/products/category/men's clothing";
 	fetchProduct(apiUrl_men).then((products) => {
 		sortProducts(products);
+		removeDivFromLandingPage()
 	});
 });
 const buttonWomen = document.querySelector("#product-women");
@@ -84,6 +86,7 @@ buttonWomen.addEventListener("click", () => {
 		"https://fakestoreapi.com/products/category/women's clothing";
 	fetchProduct(apiUrl_women).then((products) => {
 		sortProducts(products);
+		removeDivFromLandingPage()
 	});
 });
 
@@ -93,6 +96,7 @@ buttonAccessories.addEventListener("click", () => {
 	const apiUrl_jewelery = "https://fakestoreapi.com/products/category/jewelery";
 	fetchProduct(apiUrl_jewelery).then((products) => {
 		sortProducts(products);
+		removeDivFromLandingPage()
 	});
 });
 
@@ -103,5 +107,6 @@ buttonElectronics.addEventListener("click", () => {
 		"https://fakestoreapi.com/products/category/electronics";
 	fetchProduct(apiUrl_electronics).then((products) => {
 		sortProducts(products);
+		removeDivFromLandingPage()
 	});
 });
