@@ -2,11 +2,6 @@ import heroImgElement from "../images/hero-img.jpg";
 
 export function createLandingPage() {
 	document.addEventListener("DOMContentLoaded", () => {
-		const link = document.createElement("link");
-		link.rel = "stylesheet";
-		link.type = "text/css";
-		link.href = "src/assets/styles/hero.css"; // Replace with the path to your CSS file
-		document.head.appendChild(link);
 
 		// Create Hero Section
 		const hero = document.createElement("div");
@@ -61,8 +56,26 @@ export function createLandingPage() {
 		heroLogo.appendChild(svg);
 		heroBanner.appendChild(heroLogo);
 
+        const bannerTextDuplicate = document.createElement("h3");
+        bannerTextDuplicate.textContent = "BLACK FRIDAY SALE";
+        heroBanner.appendChild(bannerTextDuplicate);
+
+        const productsHeader = document.createElement("div");
+        productsHeader.classList.add("products");
+
+        const newArrivals = document.createElement("h1");
+        newArrivals.textContent = "NEW ARRIVALS";
+        newArrivals.classList.add("arrivals");
+        productsHeader.appendChild(newArrivals);
+
 		// Append Hero and Hero Banner to the Body
-		document.body.appendChild(hero);
-		document.body.appendChild(heroBanner);
+		document.querySelector("#heroSection").appendChild(hero);
+		document.querySelector("#heroSection").appendChild(heroBanner);
+        document.querySelector("#heroSection").appendChild(productsHeader);
+        document.querySelector("#productSection").appendChild();
+
+        //    <div class="trending-section">
+       //     <h1>TRENDING</h1>
+
 	});
 }
