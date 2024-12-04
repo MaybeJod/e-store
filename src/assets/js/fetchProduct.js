@@ -1,4 +1,6 @@
 // fetch the api for multiple products
+import { addItemToCart } from "../js/cart/cartOperations.js";
+
 export default async function fetchProduct(url) {
 	try {
 		const response = await fetch(url);
@@ -10,10 +12,7 @@ export default async function fetchProduct(url) {
 	}
 }
 
-import { addProductToCart } from "../js/cart/cartOperations.js";
-//import { displayCart } from "../js/cart/cartDisplay.js";
-
-/* export default function fetchAndDisplayProducts(productContainer) {
+export function fetchAndDisplayProducts(productContainer) {
 	const apiUrl = "https://fakestoreapi.com/products";
 
 	fetch(apiUrl)
@@ -42,7 +41,8 @@ import { addProductToCart } from "../js/cart/cartOperations.js";
 					const product = products.find((p) => p.id === productId);
 
 					if (product) {
-						addProductToCart(product); // Add product to cart
+						//addProductToCart(product); // Add product to cart
+						addItemToCart(product);
 					}
 				});
 			});
@@ -50,4 +50,4 @@ import { addProductToCart } from "../js/cart/cartOperations.js";
 		.catch((error) => {
 			console.error("Error fetching products:", error); // Debug log
 		});
-} */
+}

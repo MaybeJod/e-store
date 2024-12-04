@@ -3,7 +3,7 @@ import fetchProduct from "../fetchProduct";
 export default function createLandingPageProduct() {
 	const apiUrlFourProducts = "https://fakestoreapi.com/products?limit=4";
 
-	const contentElement = document.querySelector("#content"); // Select #content
+	const contentElement = document.querySelector("#productSection");
 	const landingPageProductElement = document.createElement("div");
 	landingPageProductElement.classList.add("landing-page-product");
 
