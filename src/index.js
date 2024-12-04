@@ -2,8 +2,9 @@
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
 import "./assets/styles/productDisplay_LP.css";
-
 import "./assets/styles/hero.css";
+import "./assets/styles/checkoutPage.css";
+
 
 /* product section */
 import "./assets/styles/productSection.css";
@@ -15,6 +16,9 @@ import "./assets/icons-and-logo/Material Icon Person.svg";
 /*-----js-----*/
 /* fetch api */
 import fetchProduct from "./assets/js/fetchProduct";
+/* display checkoutpage */
+import checkoutPage from "./assets/js/checkoutPage";
+checkoutPage();
 /* reset content */
 import resetContent from "./assets/js/components/resetContent.js";
 /* go to home */
@@ -34,7 +38,7 @@ import { createTrendingSection } from "./assets/js/trendingProducts.js";
 //import displayProduct from "./assets/js/displayProduct";
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
-import {removeDivFromLandingPage} from "./assets/js/productCategories";
+/* import {removeDivFromLandingPage} from "./assets/js/productCategories"; */
 
 /* cart */
 import renderCartPage from "./assets/js/cart/cartPage.js";
@@ -68,6 +72,12 @@ buttonAllProducts.addEventListener("click", () => {
 	resetContent();
 	fetchAndDisplayProducts(productSectionElement);
 });
+/* checkout page showcase */
+const checkoutButton = document.querySelector("#checkoutButton");
+checkoutButton.addEventListener("click", () => {
+	resetContent();
+/* 	checkoutPage(); */
+});
 
 const buttonMen = document.querySelector("#product-men");
 buttonMen.addEventListener("click", () => {
@@ -76,7 +86,6 @@ buttonMen.addEventListener("click", () => {
 		"https://fakestoreapi.com/products/category/men's clothing";
 	fetchProduct(apiUrl_men).then((products) => {
 		sortProducts(products);
-		removeDivFromLandingPage()
 	});
 });
 const buttonWomen = document.querySelector("#product-women");
@@ -86,7 +95,6 @@ buttonWomen.addEventListener("click", () => {
 		"https://fakestoreapi.com/products/category/women's clothing";
 	fetchProduct(apiUrl_women).then((products) => {
 		sortProducts(products);
-		removeDivFromLandingPage()
 	});
 });
 
@@ -96,7 +104,6 @@ buttonAccessories.addEventListener("click", () => {
 	const apiUrl_jewelery = "https://fakestoreapi.com/products/category/jewelery";
 	fetchProduct(apiUrl_jewelery).then((products) => {
 		sortProducts(products);
-		removeDivFromLandingPage()
 	});
 });
 
@@ -107,6 +114,5 @@ buttonElectronics.addEventListener("click", () => {
 		"https://fakestoreapi.com/products/category/electronics";
 	fetchProduct(apiUrl_electronics).then((products) => {
 		sortProducts(products);
-		removeDivFromLandingPage()
 	});
 });
