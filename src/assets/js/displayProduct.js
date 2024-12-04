@@ -1,4 +1,3 @@
-//import "../styles/productSection.css"
 // display product article
 export default async function displayProduct(product) {
 	const productSection = document.querySelector("#productSection");

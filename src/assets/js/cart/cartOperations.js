@@ -1,63 +1,45 @@
-import { loadCart, saveCart } from "./cartStorage";
+// Get cart from localStorage
+export function getCart() {
+	return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
-export function addProductToCart(product) {
-	const cart = loadCart();
+// Save cart to localStorage
+export function saveCart(cart) {
+	localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-	const existingProduct = cart.find((item) => item.id === product.id);
+// Add an item to the cart
+export function addItemToCart(product) {
+	const cart = getCart();
+	const existingItem = cart.find((item) => item.id === product.id);
 
-	if (existingProduct) {
-		existingProduct.quantity += 1;
+	if (existingItem) {
+		existingItem.quantity += 1;
 	} else {
 		cart.push({ ...product, quantity: 1 });
 	}
 
 	saveCart(cart);
-	updateCartDisplay();
 }
 
-export function removeProductFromCart(productId) {
-	let cart = loadCart();
+// Remove an item from the cart
+export function removeItemFromCart(productId) {
+	let cart = getCart();
+	cart = cart.filter((item) => item.id !== productId);
+	saveCart(cart);
+}
 
-	const productIndex = cart.findIndex((item) => item.id === productId);
+// Update the quantity of an item
+export function updateItemQuantity(productId, quantity) {
+	const cart = getCart();
+	const item = cart.find((item) => item.id === productId);
 
-	if (productIndex !== -1) {
-		if (cart[productIndex].quantity > 1) {
-			cart[productIndex].quantity -= 1;
+	if (item) {
+		item.quantity = quantity;
+		if (item.quantity <= 0) {
+			removeItemFromCart(productId);
 		} else {
-			cart.splice(productIndex, 1);
+			saveCart(cart);
 		}
 	}
-
-	saveCart(cart);
-	updateCartDisplay();
-}
-
-export function updateCartDisplay() {
-	const cart = loadCart();
-	const cartContainer = document.querySelector("#cart");
-
-	cartContainer.innerHTML = ""; // Clear the current cart display
-
-	cart.forEach((item) => {
-		const cartItemElement = document.createElement("div");
-		cartItemElement.classList.add("cart-item");
-
-		cartItemElement.innerHTML = `
-            <h1>${item.title}</h1>
-            <img src="${item.image}" alt="${item.title}" width="50" />
-            <span>Price: <strong>$${item.price}</strong></span>
-            <span>Quantity: ${item.quantity}</span>
-            <button class="remove-from-cart" data-id="${item.id}">Remove</button>
-        `;
-
-		cartContainer.appendChild(cartItemElement);
-	});
-
-	// Add event listeners to the "Remove" buttons for live cart updates
-	cartContainer.querySelectorAll(".remove-from-cart").forEach((button) => {
-		button.addEventListener("click", (e) => {
-			const productId = parseInt(e.target.getAttribute("data-id"), 10);
-			removeProductFromCart(productId); // Remove product from cart
-		});
-	});
 }

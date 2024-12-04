@@ -9,14 +9,16 @@
 		<nav>
 			<div class="page-container">
 				<div class="nav-logo">
-					<a href="#">
+					<a href="#" id="home-reset">
 						<img src="./assets/icons-and-logo/Jasmiz-Logo.svg" alt="" />
 						<h1>jasmiz</h1>
 					</a>
 				</div>
 				<div class="nav-links">
 					<div class="nav-dropdown">
-						<button class="nav-drop-button">All Categories ▼</button>
+						<button class="nav-drop-button" id="product-all">
+							All Categories ▼
+						</button>
 						<div class="nav-dropdown-content">
 							<hr />
 							<ul>
@@ -53,16 +55,17 @@
 							src="./assets/icons-and-logo/Material Icon Person.svg"
 							alt="profile icon" />
 					</div>
-					<div class="nav-shopping-cart" id="shoppingCart">
-						<img
-							src="./assets/icons-and-logo/Shopping-Cart-Icon.svg"
-							alt="shopping cart" />
+					<div class="nav-shopping-cart">
+						<button id="viewCartButton">
+							<img
+								src="./assets/icons-and-logo/Shopping-Cart-Icon.svg"
+								alt="shopping cart" />
+						</button>
 					</div>
 				</div>
 			</div>
 		</nav>
 		<main class="page-container">
-			<section id="content"></section>
 			<section id="heroSection"></section>
 			<section id="productSection"></section>
 			<section id="topRated"></section>

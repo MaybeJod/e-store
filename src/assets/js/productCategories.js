@@ -1,6 +1,8 @@
-const productSection = document.querySelector("#productSection");
 export async function sortProducts(product) {
+	const productSection = document.querySelector("#productSection");
+
 	let productContainer = document.querySelector(".product-container");
+
 	if (productContainer === undefined || productContainer === null) {
 		productContainer = document.createElement("div");
 		productContainer.classList.add("product-container");

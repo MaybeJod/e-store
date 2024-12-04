@@ -3,7 +3,7 @@ import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
 import "./assets/styles/productDisplay_LP.css";
 
-import "./assets/styles/hero.css"; // Correct path assuming the styles folder is in assets
+import "./assets/styles/hero.css";
 
 /* product section */
 import "./assets/styles/productSection.css";
@@ -15,10 +15,19 @@ import "./assets/icons-and-logo/Material Icon Person.svg";
 /*-----js-----*/
 /* fetch api */
 import fetchProduct from "./assets/js/fetchProduct";
-import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js";
-/* landing page products */
-import { createLandingPage } from "./assets/js/landingPage.js"; // Correct path assuming landingPage.js is in assets/js
+/* reset content */
+import resetContent from "./assets/js/components/resetContent.js";
+/* go to home */
+import homeReset from "./assets/js/components/home-reset.js";
 
+/* import temp products to add to cart */
+import { fetchAndDisplayProducts } from "./assets/js/fetchProduct";
+
+/* landing page products */
+import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js";
+
+/* landing page */
+import { createLandingPage } from "./assets/js/landingPage.js";
 import { createTrendingSection } from "./assets/js/trendingProducts.js";
 
 /* display product */
@@ -26,43 +35,42 @@ import { createTrendingSection } from "./assets/js/trendingProducts.js";
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
 
-/*/* landing-page */
-/* hero and banner */
-createLandingPage();
-createTrendingSection();
-
 /* cart */
-import { displayCart } from "./assets/js/cart/cartDisplay.js";
-import fetchAndDisplayProducts from "./assets/js/fetchProduct.js";
-import { updateCartDisplay } from "./assets/js/cart/cartOperations.js";
+import renderCartPage from "./assets/js/cart/cartPage.js";
 
-const productContainer = document.querySelector("#productSection");
-const cartContainer = document.querySelector("#cart");
+/* when user clicks on nav logo */
+const homeElement = document.querySelector("#home-reset");
+homeElement.addEventListener("click", () => {
+	resetContent();
+	homeReset();
+});
 
-// Fetch and display products
-fetchAndDisplayProducts(productContainer);
+/* landing-page */
+/* hero and banner */
+/* createLandingPage();
+createTrendingSection(); */
 
-// Display the cart
-displayCart(cartContainer);
+/* run cart function*/
+renderCartPage();
 
-updateCartDisplay();
-
-/*
+/* landing page product categories */
 document.addEventListener("DOMContentLoaded", () => {
-	// Initialize the hero and banner
 	createLandingPage();
-  
-	// Initialize landing page products
-	createLandingPageProduct();
-  });
-*/
-//document.addEventListener("DOMContentLoaded", createLandingPageProduct);
-document.addEventListener("DOMContentLoaded", () => {
+	createTrendingSection();
 	displayCategoriesOnLandingPage();
+});
+
+/* nav drop down for categories */
+const buttonAllProducts = document.querySelector("#product-all");
+buttonAllProducts.addEventListener("click", () => {
+	const productSectionElement = document.querySelector("#productSection");
+	resetContent();
+	fetchAndDisplayProducts(productSectionElement);
 });
 
 const buttonMen = document.querySelector("#product-men");
 buttonMen.addEventListener("click", () => {
+	resetContent();
 	const apiUrl_men =
 		"https://fakestoreapi.com/products/category/men's clothing";
 	fetchProduct(apiUrl_men).then((products) => {
@@ -71,6 +79,7 @@ buttonMen.addEventListener("click", () => {
 });
 const buttonWomen = document.querySelector("#product-women");
 buttonWomen.addEventListener("click", () => {
+	resetContent();
 	const apiUrl_women =
 		"https://fakestoreapi.com/products/category/women's clothing";
 	fetchProduct(apiUrl_women).then((products) => {
@@ -80,6 +89,7 @@ buttonWomen.addEventListener("click", () => {
 
 const buttonAccessories = document.querySelector("#product-accessories");
 buttonAccessories.addEventListener("click", () => {
+	resetContent();
 	const apiUrl_jewelery = "https://fakestoreapi.com/products/category/jewelery";
 	fetchProduct(apiUrl_jewelery).then((products) => {
 		sortProducts(products);
@@ -88,6 +98,7 @@ buttonAccessories.addEventListener("click", () => {
 
 const buttonElectronics = document.querySelector("#product-electronics");
 buttonElectronics.addEventListener("click", () => {
+	resetContent();
 	const apiUrl_electronics =
 		"https://fakestoreapi.com/products/category/electronics";
 	fetchProduct(apiUrl_electronics).then((products) => {
