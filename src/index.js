@@ -31,19 +31,22 @@ import { sortProducts } from "./assets/js/productCategories";
 createLandingPage();
 createTrendingSection();
 
+/* cart */
+import { displayCart } from "./assets/js/cart/cartDisplay.js";
+import fetchAndDisplayProducts from "./assets/js/fetchProduct.js";
+import { updateCartDisplay } from "./assets/js/cart/cartOperations.js";
 
-// for all products
-//"https://fakestoreapi.com/products"
+const productContainer = document.querySelector("#productSection");
+const cartContainer = document.querySelector("#cart");
 
-//for one product
-//""https://fakestoreapi.com/products/1""
+// Fetch and display products
+fetchAndDisplayProducts(productContainer);
 
-/* const apiUrl = "https://fakestoreapi.com/products";
+// Display the cart
+displayCart(cartContainer);
 
-fetchProduct(apiUrl).then((products) => {
-	console.log("Fetched Products:", products);
-	displayProduct(products);
-}); */
+updateCartDisplay();
+
 /*
 document.addEventListener("DOMContentLoaded", () => {
 	// Initialize the hero and banner
