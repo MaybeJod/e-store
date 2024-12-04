@@ -19,6 +19,8 @@ import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js
 /* landing page products */
 import { createLandingPage } from "./assets/js/landingPage.js"; // Correct path assuming landingPage.js is in assets/js
 
+import { createTrendingSection } from "./assets/js/trendingProducts.js";
+
 /* display product */
 //import displayProduct from "./assets/js/displayProduct";
 /* sort products */
@@ -27,6 +29,8 @@ import { sortProducts } from "./assets/js/productCategories";
 /*/* landing-page */
 /* hero and banner */
 createLandingPage();
+createTrendingSection();
+
 
 // for all products
 //"https://fakestoreapi.com/products"

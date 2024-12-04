@@ -3,6 +3,7 @@ export default async function fetchProduct(url) {
 	try {
         const response = await fetch(url);
         const data = await response.json();
+        console.log(data);  
         return data;
     } catch (error) {
         console.trace("An error occurred: ", error.message);
