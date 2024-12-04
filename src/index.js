@@ -1,10 +1,9 @@
 /*-----styles-----*/
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
-import "./assets/styles/productDisplay_LP.css"
-/*
+import "./assets/styles/productDisplay_LP.css";
+
 import "./assets/styles/hero.css"; // Correct path assuming the styles folder is in assets
-*/
 
 /* product section */
 import "./assets/styles/productSection.css";
@@ -16,10 +15,9 @@ import "./assets/icons-and-logo/Material Icon Person.svg";
 /*-----js-----*/
 /* fetch api */
 import fetchProduct from "./assets/js/fetchProduct";
-import {displayCategoriesOnLandingPage} from "./assets/js/productDisplay_LP.js";
-/* landing page products 
+import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js";
+/* landing page products */
 import { createLandingPage } from "./assets/js/landingPage.js"; // Correct path assuming landingPage.js is in assets/js
-*/
 
 /* display product */
 //import displayProduct from "./assets/js/displayProduct";
@@ -28,6 +26,7 @@ import { sortProducts } from "./assets/js/productCategories";
 
 /*/* landing-page */
 /* hero and banner */
+createLandingPage();
 
 // for all products
 //"https://fakestoreapi.com/products"
@@ -52,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
 */
 //document.addEventListener("DOMContentLoaded", createLandingPageProduct);
 document.addEventListener("DOMContentLoaded", () => {
-displayCategoriesOnLandingPage();
-})
+	displayCategoriesOnLandingPage();
+});
 
 const buttonMen = document.querySelector("#product-men");
 buttonMen.addEventListener("click", () => {
@@ -88,4 +87,3 @@ buttonElectronics.addEventListener("click", () => {
 		sortProducts(products);
 	});
 });
-
