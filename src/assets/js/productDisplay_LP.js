@@ -20,6 +20,7 @@ export function displayCategoriesOnLandingPage(){
 
   const menClothingDiv = document.createElement("div");
   menClothingDiv.classList.add("category");
+  menClothingDiv.id = 'men_category';
   categoriesDiv.prepend(menClothingDiv);
   const menClothingImg = document.createElement("img");
   menClothingImg.classList.add("category_Image");
@@ -33,6 +34,7 @@ export function displayCategoriesOnLandingPage(){
   //-----------  
   const womenClothingDiv = document.createElement("div");
   womenClothingDiv.classList.add("category");
+  womenClothingDiv.id = 'women_category';
   menClothingDiv.insertAdjacentElement("afterend", womenClothingDiv);
 
   const womenClothingImg = document.createElement("img");
@@ -47,6 +49,7 @@ export function displayCategoriesOnLandingPage(){
   //------------
   const accessoriesDiv = document.createElement("div");
   accessoriesDiv.classList.add("category");
+  accessoriesDiv.id = 'accessories_category';
   womenClothingDiv.insertAdjacentElement("afterend", accessoriesDiv);
 
   const accessoriesImg = document.createElement("img");
@@ -61,6 +64,7 @@ export function displayCategoriesOnLandingPage(){
   //-------------
   const electronicsDiv = document.createElement("div");
   electronicsDiv.classList.add("category");
+  electronicsDiv.id = 'electronics_category';
   accessoriesDiv.insertAdjacentElement("afterend", electronicsDiv);
 
   const electronicsImg = document.createElement("img");

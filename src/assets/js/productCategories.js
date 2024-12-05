@@ -41,9 +41,3 @@ function createProductElement(product) {
 
 	return productElement;
 }
-
-export function removeDivFromLandingPage() {
-	document.getElementById('heroSection').style.display = 'none';
-	document.querySelector('.lp_productCategory').style.display = 'none';
-	document.querySelector('.allProducts_btn').style.display = 'none';
-}
