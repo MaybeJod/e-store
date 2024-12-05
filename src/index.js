@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	registerButton();
 });
 
+
 /* nav drop down for categories */
 const buttonAllProducts = document.querySelector("#product-all");
 buttonAllProducts.addEventListener("click", () => {

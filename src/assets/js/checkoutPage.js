@@ -34,28 +34,28 @@ export default function checkoutPage() {
         <h3 class="checkout-customer-title" id="customerTitle">Customer Information</h3>
         <div class="checkout-input-group email" id="email-checkout">
             <label for="email">Email</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" name="email" required>
         </div>
          <div class="checkout-input-group" id="firstName">
             <label for="first-name">First Name</label>
-            <input type="text" id="first-name" required>
+            <input type="text" id="first-name" name="first-name" required>
         </div>
         <div class="checkout-input-group" id="lastName">
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" required>
+            <input type="text" id="last-name" name="last-name" required>
         </div>
         </div>
         <div class="checkout-input-group" id="address">
             <label for="address">Address</label>
-            <input type="text" id="address" required>
+            <input type="text" id="address" name="address" required>
         </div>
         <div class="checkout-input-group" id="city">
             <label for="city">City</label>
-            <input type="text" id="city" required>
+            <input type="text" id="city" name="city" required>
         </div>
         <div class="checkout-input-group" id="country">
             <label for="country">Country</label>
-            <select id="country">
+            <select id="country" name="country">
                 <option value="">Select a country</option>
                 <option value="US">United States</option>
                 <option value="SE">Sweden</option>
@@ -63,7 +63,7 @@ export default function checkoutPage() {
         </div>
         <div class="checkout-input-group" id="postalCode">
             <label for="postal-code">Postal Code</label>
-            <input type="text" id="postal-code" required>
+            <input type="text" id="postal-code" name="postal-code" required>
         </div>
     `;
     checkoutContentContainer.appendChild(customerInfoSection);
@@ -86,15 +86,15 @@ export default function checkoutPage() {
         </div>
         <div class="input-group" id="checkout-cardnumber">
             <label for="card-number">Card Number</label>
-            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+            <input type="text" id="card-number" name="card-number' placeholder="1234 5678 9012 3456" required>
         </div> 
         <div class="input-group" id="expiry-date">
-            <label for="expire-date">Expiry-Date</label>
-            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+            <label for="expiry-date">Expiry-Date</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
         </div>
         <div class="input-group" id="cvc">
             <label for="cvc">CVC</label>
-            <input type="text" id="cvc" placeholder="123" required>
+            <input type="text" id="cvc" name="cvc" placeholder="123" required>
         </div>
     `;
     checkoutContentContainer.appendChild(paymentMethodSection);
