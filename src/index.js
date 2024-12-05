@@ -46,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
 //import displayProduct from "./assets/js/displayProduct";
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
+
 /* import {removeDivFromLandingPage} from "./assets/js/productCategories"; */
+
 
 /* cart */
 import renderCartPage from "./assets/js/cart/cartPage.js";
@@ -71,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	createLandingPage();
 	createTrendingSection();
 	displayCategoriesOnLandingPage();
+	registerButton();
 });
 
 /* nav drop down for categories */
@@ -124,3 +127,16 @@ buttonElectronics.addEventListener("click", () => {
 		sortProducts(products);
 	});
 });
+
+function registerButton(){
+	const viewAllProducts = document.getElementById('allProducts_btn');
+viewAllProducts.addEventListener("click", () => {
+	resetContent();
+	const apiUrl_allProducts = 'https://fakestoreapi.com/products';
+	fetchProduct(apiUrl_allProducts).then((products) => {
+		sortProducts(products);
+	});
+})
+}
+
+
