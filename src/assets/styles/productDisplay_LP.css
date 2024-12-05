@@ -4,29 +4,66 @@
   gap: 2rem;
 }
 .allProducts_btn{
-  width: 10rem;
+  width: 15rem;
   height: 3rem;
-  background-color: yellow;
+  background-color:var(--main-yellow);
   align-self: center;
   border-radius: 7px;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 .lp_productCategory{
-  height: 40rem;
+  height: 33rem;
   width: 130rem;
   
 }
+.categories_heading{
+  background-color: var(--main-black);
+  width: 63%;
+  height: 12%;
+  color: var(--main-yellow);
+  text-align: center;
+  align-content: center;
+  border: 2px solid;
+  font-weight: 800;
+  font-family: "Underrated";
+  font-size: 26px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Hides overflowing text */
+  display: block;
+  width: 63%; /* Full width of the container */
+  animation: run-text 20s linear infinite; /* Animation properties */
+  }
+
+  @keyframes run-text {
+    0% {
+      transform: translateX(-100%); /* Move to outside the left edge */
+    }
+    100% {
+      transform: translateX(100%); /* Start outside the right edge */
+    }
+    
+  }
 .categories_container{
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  width: 63%;
 }
   .category{
-    height: 35rem;
-    width: 28rem;
-    border: 1px solid;
+    height: 28rem;
+    width: 20rem;
+    border: 2px solid;
     border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px rgba(217, 217, 8, 0.9);
+    cursor: pointer;
   }
     .category_Image{
-      height: 30rem;
+      height: 24rem;  
       width: 30rem;
+      padding-top: 1rem;
+    }
+    .category_Text{
+      text-transform: uppercase;
+      text-align: center;
     }

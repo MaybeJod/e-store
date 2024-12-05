@@ -86,40 +86,21 @@ buttonAllProducts.addEventListener("click", () => {
 });
 
 
-const buttonMen = document.querySelector("#product-men");
-buttonMen.addEventListener("click", () => {
-	resetContent();
-	const apiUrl_men =
-		"https://fakestoreapi.com/products/category/men's clothing";
-	fetchProduct(apiUrl_men).then((products) => {
-		sortProducts(products);
-	});
-});
+
+//[document.querySelector('.a-class'), document.querySelector('.another-class')].forEach(item => {
+ // item.addEventListener('click', event => {
+    //handle click
+ // })
+//})
+//const buttonMen = document.querySelector("#product-men");
+
+
 const buttonWomen = document.querySelector("#product-women");
 buttonWomen.addEventListener("click", () => {
 	resetContent();
 	const apiUrl_women =
 		"https://fakestoreapi.com/products/category/women's clothing";
 	fetchProduct(apiUrl_women).then((products) => {
-		sortProducts(products);
-	});
-});
-
-const buttonAccessories = document.querySelector("#product-accessories");
-buttonAccessories.addEventListener("click", () => {
-	resetContent();
-	const apiUrl_jewelery = "https://fakestoreapi.com/products/category/jewelery";
-	fetchProduct(apiUrl_jewelery).then((products) => {
-		sortProducts(products);
-	});
-});
-
-const buttonElectronics = document.querySelector("#product-electronics");
-buttonElectronics.addEventListener("click", () => {
-	resetContent();
-	const apiUrl_electronics =
-		"https://fakestoreapi.com/products/category/electronics";
-	fetchProduct(apiUrl_electronics).then((products) => {
 		sortProducts(products);
 	});
 });
@@ -132,7 +113,50 @@ viewAllProducts.addEventListener("click", () => {
 	fetchProduct(apiUrl_allProducts).then((products) => {
 		sortProducts(products);
 	});
-})
+});
+[document.querySelector("#product-men"), document.querySelector('#men_category')].forEach(item =>{
+	item.addEventListener("click", () => {
+		resetContent();
+		const apiUrl_men = 
+		"https://fakestoreapi.com/products/category/men's clothing";
+	fetchProduct(apiUrl_men).then((products) => {
+		sortProducts(products);
+	});
+});
+});
+//--------
+[document.querySelector("#product-women"), document.querySelector('#women_category')].forEach(item =>{
+
+	item.addEventListener("click", () => {
+	resetContent();
+	const apiUrl_women =
+	"https://fakestoreapi.com/products/category/women's clothing";
+	fetchProduct(apiUrl_women).then((products) => {
+	sortProducts(products);
+	});
+});
+});
+
+//------------
+[document.querySelector("#product-accessories"), document.querySelector('#accessories_category')].forEach(item =>{
+	item.addEventListener("click", () => {
+		resetContent();
+		const apiUrl_jewelery = "https://fakestoreapi.com/products/category/jewelery";
+		fetchProduct(apiUrl_jewelery).then((products) => {
+		sortProducts(products);
+		});	
+});
+});
+//----------
+[document.querySelector("#product-electronics"), document.querySelector('#electronics_category')].forEach(item =>{
+	item.addEventListener("click", () => {
+	resetContent();
+	const apiUrl_electronics ="https://fakestoreapi.com/products/category/electronics";
+	fetchProduct(apiUrl_electronics).then((products) => {
+		sortProducts(products);
+	});
+});
+});
 }
 
 
