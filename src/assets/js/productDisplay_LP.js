@@ -74,6 +74,7 @@ export function displayCategoriesOnLandingPage(){
 
   const viewAllProductsBtn = document.createElement("button");
   viewAllProductsBtn.classList.add("allProducts_btn");
+  viewAllProductsBtn.id='allProducts_btn';
   productByCategoriesContainer.insertAdjacentElement('afterend', viewAllProductsBtn);
   viewAllProductsBtn.innerText = 'View All Products';
 
