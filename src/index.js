@@ -2,8 +2,9 @@
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
 import "./assets/styles/productDisplay_LP.css";
-
 import "./assets/styles/hero.css";
+import "./assets/styles/checkoutPage.css";
+
 
 /* product section */
 import "./assets/styles/productSection.css";
@@ -15,6 +16,9 @@ import "./assets/icons-and-logo/Material Icon Person.svg";
 /*-----js-----*/
 /* fetch api */
 import fetchProduct from "./assets/js/fetchProduct";
+/* display checkoutpage */
+import checkoutPage from "./assets/js/checkoutPage";
+checkoutPage();
 /* reset content */
 import resetContent from "./assets/js/components/resetContent.js";
 /* go to home */
@@ -34,6 +38,9 @@ import { createTrendingSection } from "./assets/js/trendingProducts.js";
 //import displayProduct from "./assets/js/displayProduct";
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
+
+/* import {removeDivFromLandingPage} from "./assets/js/productCategories"; */
+
 
 /* cart */
 import renderCartPage from "./assets/js/cart/cartPage.js";
@@ -67,6 +74,12 @@ buttonAllProducts.addEventListener("click", () => {
 	const productSectionElement = document.querySelector("#productSection");
 	resetContent();
 	fetchAndDisplayProducts(productSectionElement);
+});
+/* checkout page showcase */
+const checkoutButton = document.querySelector("#checkoutButton");
+checkoutButton.addEventListener("click", () => {
+	resetContent();
+/* 	checkoutPage(); */
 });
 
 const buttonMen = document.querySelector("#product-men");
