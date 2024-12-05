@@ -72,12 +72,7 @@ buttonAllProducts.addEventListener("click", () => {
 	resetContent();
 	fetchAndDisplayProducts(productSectionElement);
 });
-/* checkout page showcase */
-const checkoutButton = document.querySelector("#checkoutButton");
-checkoutButton.addEventListener("click", () => {
-	resetContent();
-/* 	checkoutPage(); */
-});
+
 
 const buttonMen = document.querySelector("#product-men");
 buttonMen.addEventListener("click", () => {
