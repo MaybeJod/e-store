@@ -4,6 +4,7 @@ import "./assets/styles/global.css";
 import "./assets/styles/productDisplay_LP.css";
 import "./assets/styles/hero.css";
 import "./assets/styles/checkoutPage.css";
+import "./assets/styles/topRated.css";
 
 
 /* product section */
@@ -33,6 +34,13 @@ import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js
 /* landing page */
 import { createLandingPage } from "./assets/js/landingPage.js";
 import { createTrendingSection } from "./assets/js/trendingProducts.js";
+
+
+import { createTopRatedGrid } from './assets/js/landing-page/topRated.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    createTopRatedGrid('https://fakestoreapi.com/products');
+});
 
 /* display product */
 //import displayProduct from "./assets/js/displayProduct";
