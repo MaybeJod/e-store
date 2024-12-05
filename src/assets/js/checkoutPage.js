@@ -167,3 +167,4 @@ export default function checkoutPage() {
     //append all the content to the main checkout page
     checkoutElement.appendChild(checkoutContentContainer);
 }
+

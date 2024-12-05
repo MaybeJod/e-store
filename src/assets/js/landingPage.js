@@ -77,5 +77,5 @@ export function createLandingPage() {
 		document.querySelector("#heroSection").appendChild(heroBanner);
         document.querySelector("#heroSection").appendChild(productsHeader);
 
-
+}
 
