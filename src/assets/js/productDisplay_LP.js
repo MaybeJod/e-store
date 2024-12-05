@@ -11,7 +11,7 @@ export function displayCategoriesOnLandingPage(){
 
   const heading = document.createElement("h2");
   heading.classList.add("categories_heading");
-  heading.innerText = "Search By Your Choice....!!"
+  heading.innerText = "Feel-Good by finding good......LET'S SEACH BY YOUR CHOICE!!"
   productByCategoriesContainer.prepend(heading);
 
   const categoriesDiv = document.createElement("div");
@@ -74,7 +74,7 @@ export function displayCategoriesOnLandingPage(){
   const electronicsText = document.createElement("p");
   electronicsText.classList.add("category_Text");
   electronicsImg.insertAdjacentElement("afterend", electronicsText);
-  electronicsText.innerText = "Accessories";
+  electronicsText.innerText = "Electronics";
 
   const viewAllProductsBtn = document.createElement("button");
   viewAllProductsBtn.classList.add("allProducts_btn");
