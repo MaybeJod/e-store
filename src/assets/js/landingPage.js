@@ -82,7 +82,10 @@ export function createLandingPage() {
        //     <h1>TRENDING</h1>
 
 
+	};
+
+
 	//    <div class="trending-section">
 	//     <h1>TRENDING</h1>
 
-}
+
