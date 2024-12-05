@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	registerButton();
 });
 
+
 /* nav drop down for categories */
 const buttonAllProducts = document.querySelector("#product-all");
 buttonAllProducts.addEventListener("click", () => {
@@ -83,12 +84,9 @@ buttonAllProducts.addEventListener("click", () => {
 	resetContent();
 	fetchAndDisplayProducts(productSectionElement);
 });
-/* checkout page showcase 
-const checkoutButton = document.querySelector("#checkoutButton");
-checkoutButton.addEventListener("click", () => {
-	resetContent();
 
-});*/
+
+
 //[document.querySelector('.a-class'), document.querySelector('.another-class')].forEach(item => {
  // item.addEventListener('click', event => {
     //handle click

@@ -156,11 +156,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
+    }
+
+    .payment-section-options button.clicked {
+        background-color: var(--main-yellow) !important;
     }
 
     .payment-section-options svg {
         width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+    .paypal-btn svg {
+        width: 48px;
         height: 24px;
     }
 
@@ -175,6 +183,13 @@
         font-weight: 600;
     }
 
+    #checkout-cardnumber,
+    #expiry-date,
+    #cvc {
+        display: flex;
+        flex-direction: column;
+    }
+    
     .payment-section-options button span,
     #checkout-cardnumber label,
     #expiry-date label,
@@ -321,6 +336,7 @@
 
 .checkout-complete-message {
     grid-area: d;
+    padding: 3rem;
 }
 
 
