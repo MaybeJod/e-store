@@ -85,6 +85,19 @@
         font-size: 1rem;
     }
 
+    #checkout-cardnumber input:focus,
+    #expiry-date input:focus,
+    #cvc input:focus,
+    #email-checkout input:focus,
+    #firstName input:focus,
+    #lastName input:focus,
+    #address input:focus,
+    #city input:focus,
+    #postalCode input:focus {
+        outline: none;
+        box-shadow: 0 0 5px var(--main-yellow);
+    }
+
     #address label,
     #city label,
     #country label,
