@@ -31,13 +31,15 @@ function createProductElement(product) {
 	productElement.classList.add("product");
 
 	productElement.innerHTML = `
-        <img src="${product.image}" alt="${product.title}" width="200" />
-        <p class="product-category">${product.category}</p>
-		<h1>${product.title}</h1>
-        <p>${product.description}</p>
-        <span>Price: <strong>$${product.price}</strong></span>
+        <img src="${product.image}" alt="${product.title}" width="200" id="product_image" />
+        <p class="product-category" id="product_group">${product.category}</p>
+				<h1 id="product_heading">${product.title}</h1>
+        <span id="product_price">Price: <strong>$${product.price}</strong></span>
         <p class="product-rating">Stars: ${product.rating.rate} (${product.rating.count})</p>
-    `;
-
+				<button class="add-to-cart" id="myCartBtn" data-id="${product.id}">Add To Cart</button>
+				<button class="wishlist-cart" id="myWishlist" data-id="${product.id}">Add To Wishlist</button>
+				<div class="nav-profile">
+				
+				`;
 	return productElement;
 }
