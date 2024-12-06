@@ -1,0 +1,46 @@
+.product {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  height: 105%;
+  text-align: left;
+}
+#product_image{
+  height: 52%;
+  width: 93%;
+}
+#product_group{
+  font-size: 0.9rem;
+  color: black;
+  font-family: var(--body-font);
+}
+#product_heading{
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  color: rgb(59, 57, 57);
+}
+#product_price{
+  font-size: 1rem;
+  color: black;
+  font-family: var(--body-font);
+}
+.product-rating{
+  font-size: 1rem;
+  color: black;
+  font-family: var(--body-font);
+}
+.product-container{
+  align-self: center;
+  margin-top: 3%;
+}
+#myCartBtn{
+  margin-top: 5%;
+  margin-right: 5%;
+  padding: 1%;
+}
+#myWishlist{
+  margin-top: 5%;
+  margin-right: 5%;
+  padding: 1%;
+}

@@ -5,6 +5,7 @@ import "./assets/styles/productDisplay_LP.css";
 import "./assets/styles/hero.css";
 import "./assets/styles/checkoutPage.css";
 import "./assets/styles/topRated.css";
+import "./assets/styles/products.css";
 
 
 /* product section */
