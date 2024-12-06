@@ -68,6 +68,19 @@ createTrendingSection(); */
 /* run cart function*/
 renderCartPage();
 
+/* checkout page showcase */
+document.addEventListener('DOMContentLoaded', () => {
+	const checkoutBtn = document.querySelector('#checkoutButton');
+	if (checkoutBtn) {
+		checkoutBtn.addEventListener('click', () => {
+		resetContent();
+		checkoutPage();
+		}); 
+	} else {
+		console.warn('checkout button not found');
+	}
+});
+
 /* landing page product categories */
 document.addEventListener("DOMContentLoaded", () => {
 	createLandingPage();
