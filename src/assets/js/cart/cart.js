@@ -46,8 +46,8 @@ export function loadCart() {
             cartItem.classList.add('cart-item');
 
             cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.title}" class="cart-item-image">
-                <div class="cart-item-details">
+                <img src="${item.image}" alt="${item.title}" class="cart-item-image item1"> 
+                <div class="cart-item-details"> 
                     <h3>${item.title}</h3>
                     <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
                     <div class="cart-item-actions">
