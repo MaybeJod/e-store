@@ -17,9 +17,9 @@
   animation: blink 1s infinite;
 }
 @keyframes blink {
-  20% { opacity: 1; }   /* Fully visible */
-  50% { opacity: 0; }  /* Hidden */
-  100% { opacity: 1; } /* Fully visible */
+  20% { opacity: 1; }   
+  50% { opacity: 0; }  
+  100% { opacity: 1; } 
 }
 .lp_productCategory{
   height: 33rem;
@@ -60,7 +60,7 @@
   grid-template-rows: 1fr;
   gap: 20px;
   width: 60%;
-  margin-left: 2rem ;
+  margin-left: 1rem ;
 }
   .category{
     height: 100%;
