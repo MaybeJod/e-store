@@ -3,6 +3,8 @@ import {
 	updateItemQuantity,
 	removeItemFromCart,
 } from "./cartOperations";
+import resetContent from "../components/resetContent.js";
+import checkoutPage from "../checkoutPage.js";
 
 export function renderCart(container) {
 	const cart = getCart();
@@ -59,6 +61,16 @@ export function renderCart(container) {
 	container.appendChild(cartContent);
 
 	// Attach event listeners
+container.querySelector('#checkout')
+const checkoutButton = document.querySelector('#checkoutButton')
+checkoutButton.addEventListener('click', () => {
+	console.log('Checkout button clicked');
+	resetContent();
+	checkoutPage();
+})
+
+
+	//increase decrease remove button addeventlistener
 	container.querySelectorAll(".decrease").forEach((button) => {
 		button.addEventListener("click", (e) => {
 			const productId = parseInt(e.target.dataset.id, 10);
@@ -89,3 +101,18 @@ export function renderCart(container) {
 		});
 	});
 }
+
+/* //attach checkoutpage button eventlistener
+
+document.addEventListener('DOMContentLoaded', () => {
+	const checkoutBtn = document.querySelector('#checkoutButton');
+	if (checkoutBtn) {
+		checkoutBtn.addEventListener('click', () => {
+		console.log('Checkout button clicced');
+		resetContent();
+		checkoutPage();
+		}); 
+	} else {
+		console.warn('checkout button not found');
+	}
+}); */

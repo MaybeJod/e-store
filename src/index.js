@@ -20,7 +20,7 @@ import "./assets/icons-and-logo/Material Icon Person.svg";
 import fetchProduct from "./assets/js/fetchProduct";
 /* display checkoutpage */
 import checkoutPage from "./assets/js/checkoutPage";
-checkoutPage();
+/* checkoutPage(); */
 /* reset content */
 import resetContent from "./assets/js/components/resetContent.js";
 /* go to home */
@@ -70,8 +70,9 @@ createTrendingSection(); */
 renderCartPage();
 
 /* checkout page showcase */
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
 	const checkoutBtn = document.querySelector('#checkoutButton');
+	console.log(checkoutBtn)
 	if (checkoutBtn) {
 		checkoutBtn.addEventListener('click', () => {
 		resetContent();
@@ -80,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	} else {
 		console.warn('checkout button not found');
 	}
-});
+}); */
 
 /* landing page product categories */
 document.addEventListener("DOMContentLoaded", () => {
