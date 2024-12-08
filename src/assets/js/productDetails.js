@@ -14,7 +14,7 @@ export default async function fetchProductDetails(productId) {
     productDetailsDiv.classList.add('product_detail');
     productSection.appendChild(productDetailsDiv);
     productDetailsDiv.innerHTML = `
-          <img src="${product.image}" alt="${product.title}" id="product_image" />
+          <img src="${product.image}" alt="${product.title}" name="product_image" id="product_image" />
 				  <div id="info_div">
             <h1 id="product_heading">${product.title}</h1>
             <p id ="product_discription">${product.description}</p>

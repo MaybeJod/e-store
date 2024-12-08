@@ -8,22 +8,49 @@ const productSection = document.querySelector("#productSection");
 export async function sortProducts(product) {
 
 	let productContainer = document.querySelector(".product-container");
+	let completeDiv = document.createElement('div');
+
 
 	if (productContainer === undefined || productContainer === null) {
 		productContainer = document.createElement("div");
 		productContainer.classList.add("product-container");
-		productSection.appendChild(productContainer);
+		
+		productSection.appendChild(completeDiv);
+		completeDiv.classList.add('complete_div');
+		let filterdiv = document.createElement("div");
+		filterdiv.classList.add('filter_div');
+		completeDiv.prepend(filterdiv);
+		filterdiv.innerHTML = 
+						`<div class="nav-dropdown">
+							<button class="nav-drop-button" id="filterMainBtn">
+								Filter By Price ▼
+							</button>
+							<div class="nav-dropdown-content">
+								<hr />
+								<ul>
+									<li>
+										<button class="nav-buttons" id="lowToHigh">Low To High</button>
+									</li>
+									<li>
+										<button class="nav-buttons" id="highToLow">High To low</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<button id=filter_ratingBtn>Filter By Rating</button>`;
+	
+		filterdiv.insertAdjacentElement("afterend", productContainer);
 	} else {
 		productContainer.innerHTML = "";
 	}
 
 	// Check if the input is an array or a single object
 	const products = Array.isArray(product) ? product : [product];
-
-	products.forEach((productItem) => {
+	products.forEach((productItem, counter) => {
 		const productElement = createProductElement(productItem);
 		productContainer.appendChild(productElement);
-		productElement.addEventListener('click', ()=>{
+		const productDetails_click = document.getElementsByName('product_image');
+		productDetails_click[counter].addEventListener('click', ()=>{
 			resetContent();
 			fetchProductDetails(productItem.id);
 		});
@@ -36,7 +63,7 @@ function createProductElement(product) {
 	productElement.classList.add("product");
 
 	productElement.innerHTML = `
-        <img src="${product.image}" alt="${product.title}" width="200" id="product_image" />
+        <img src="${product.image}" alt="${product.title}" width="200" id="product_image" name="product_image" />
 				<h1 id="product_heading">${product.title}</h1>
         <span id="product_price">Price: <strong>$${product.price}</strong></span>
         <p class="product-rating">Stars: ${product.rating.rate} (${product.rating.count})</p>
