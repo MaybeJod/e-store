@@ -1,0 +1,92 @@
+.nav-drop-button {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  width: 12rem;
+  &:hover {
+      background-color: var(--main-white);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+  }
+}
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--main-white);
+  box-shadow: 9px 29px 19px 3px rgba(0,0,0,0.34);
+  width: 12rem;
+  z-index: 1;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  color: var(--main-black);
+  ul {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+  }
+  li {
+      list-style: none;
+      .nav-buttons {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+          background-color: transparent;
+          border: none;
+          padding: 0;
+          font: inherit;
+          cursor: pointer;
+          &:hover {
+              color: blue
+          }
+      }
+  }
+}
+.nav-dropdown:hover .nav-dropdown-content {
+display: block;
+}
+.nav-about-us {
+text-decoration: none;
+color: inherit;
+background-color: transparent;
+border: none;
+padding: 0;
+font: inherit;
+cursor: pointer;
+&:hover {
+  color: var(--main-yellow);
+}
+}
+.complete_div{
+  display: flex;
+  gap: 2rem;
+  
+}
+.nav-dropdown #filterMainBtn{
+  margin-top: 40%;
+  font-family: var(--body-font);
+  font-size: 1.3rem;
+  border: 1px solid;
+  height: 2.5rem;
+  border-radius: 10px;
+}
+.nav-dropdown-content #lowToHigh{
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+.nav-dropdown-content #highToLow{
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+.filter_div #filter_ratingBtn{
+  height: 8%;
+  margin-top: 20%;
+  font-family: var(--body-font);
+  font-size: 1.3rem;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 95%;
+  
+}
