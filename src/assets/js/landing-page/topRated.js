@@ -25,28 +25,36 @@ export async function createTopRatedGrid(apiUrl) {
 
         // Add products to the container
         top6Products.forEach(product => {
-            // Create a product card
-            const productDiv = document.createElement('div');
-            productDiv.className = 'product';
+            // Create a parent div for the product card
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
 
             // Add image
             const img = document.createElement('img');
             img.src = product.image;
             img.alt = product.title;
-            productDiv.appendChild(img);
+            img.className = 'product-image';
+
+            // Create a div for product info
+            const productInfo = document.createElement('div');
+            productInfo.className = 'product-info';
 
             // Add product name
             const name = document.createElement('h3');
             name.textContent = product.title;
-            productDiv.appendChild(name);
+            productInfo.appendChild(name);
 
             // Add price
             const price = document.createElement('p');
             price.textContent = `Price: $${product.price}`;
-            productDiv.appendChild(price);
+            productInfo.appendChild(price);
+
+            // Append image and info to the parent product card
+            productCard.appendChild(img);
+            productCard.appendChild(productInfo);
 
             // Append the product card to the container
-            container.appendChild(productDiv);
+            container.appendChild(productCard);
         });
     } catch (error) {
         console.error('Error:', error);

@@ -1,3 +1,4 @@
+import "./cart.css";
 import {
 	getCart,
 	updateItemQuantity,
@@ -27,8 +28,8 @@ export function renderCart(container) {
 		itemElement.classList.add("cart-item");
 
 		itemElement.innerHTML = `
-			<img src="${image}" alt="${title}" class="cart-item-image" />
-			<div class="cart-item-details">
+			<img src="${image}" alt="${title}" class="cart-item-image click1" />
+			<div class="cart-item-details cart-con">
 				<h3>${title}</h3>
 				<p>Price: $${price}</p>
 				<p>Quantity: ${quantity}</p>
