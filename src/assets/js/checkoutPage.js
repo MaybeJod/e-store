@@ -1,5 +1,3 @@
-
-
 export default function checkoutPage() {
     const checkoutElement = document.getElementById('checkout');
     if (checkoutElement) {
@@ -17,56 +15,54 @@ export default function checkoutPage() {
         const form = document.createElement('form');
         form.id = 'checkoutForm';
 
+        const customerInfoSection = document.createElement('div');
+        customerInfoSection.classList.add('checkout-section');
+        customerInfoSection.innerHTML = `
+            <h3 class="checkout-customer-title" id="customerTitle">Customer Information</h3>
+            <div class="checkout-input-group email" id="email-checkout">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="checkout-input-group" id="firstName">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="checkout-input-group" id="lastName">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="checkout-input-group" id="address">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="checkout-input-group" id="city">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="checkout-input-group" id="country">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="">Select a country</option>
+                    <option value="US">United States</option>
+                    <option value="SE">Sweden</option>
+                </select>
+            </div>
+            <div class="checkout-input-group" id="postalCode">
+                <label for="postal-code">Postal Code</label>
+                <input type="text" id="postal-code" name="postal-code" required>
+            </div>
+        `;
+        form.appendChild(customerInfoSection);
+
         checkoutFormContainer.appendChild(checkoutFormTitle);
         checkoutFormContainer.appendChild(form);
 
         return checkoutFormContainer;
     };
 
-    //main container for the FORM
     const checkoutContentContainer = document.createElement('div');
     checkoutContentContainer.classList.add('checkout-content-container');
-
-    //create the customer info form
-    const customerInfoSection = document.createElement('div');
-    customerInfoSection.classList.add('checkout-section');
-    customerInfoSection.innerHTML = `
-        <h3 class="checkout-customer-title" id="customerTitle">Customer Information</h3>
-        <div class="checkout-input-group email" id="email-checkout">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-         <div class="checkout-input-group" id="firstName">
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first-name" required>
-        </div>
-        <div class="checkout-input-group" id="lastName">
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last-name" required>
-        </div>
-        </div>
-        <div class="checkout-input-group" id="address">
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" required>
-        </div>
-        <div class="checkout-input-group" id="city">
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" required>
-        </div>
-        <div class="checkout-input-group" id="country">
-            <label for="country">Country</label>
-            <select id="country" name="country">
-                <option value="">Select a country</option>
-                <option value="US">United States</option>
-                <option value="SE">Sweden</option>
-            </select>
-        </div>
-        <div class="checkout-input-group" id="postalCode">
-            <label for="postal-code">Postal Code</label>
-            <input type="text" id="postal-code" name="postal-code" required>
-        </div>
-    `;
-    checkoutContentContainer.appendChild(customerInfoSection);
+    checkoutContentContainer.appendChild(createForm('Checkout Form'));
 
     //Payment setion
     const paymentMethodSection = document.createElement('div');
@@ -197,8 +193,12 @@ export default function checkoutPage() {
                 </div>
                 <div class="order-summary-words">
                     <span>Sample Product</span>
-                    <p>quantity *1</p>
-                    <span>$99.99</span>
+                    <div>
+                        <button class="decrease-btn">-</button>
+                        <span class="quantity" data-price="99.99">1</span>
+                        <button class="increase-btn">+</button>
+                    </div>
+                    <span class="price">$99.99</span>
                 </div>    
             </div>
             <div class="order-summary-item">
@@ -207,13 +207,17 @@ export default function checkoutPage() {
                 </div>
                 <div class="order-summary-words">
                     <span>Sample Product</span>
-                    <p>quantity *2</p>                
-                    <span>$99.98</span>
+                    <div>
+                        <button class="decrease-btn">-</button>
+                        <span class="quantity" data-price="99.98">2</span>
+                        <button class="increase-btn">+</button>
+                    </div>
+                    <span class="price">$99.98</span>
                 </div>
             </div>
             <div class="order-subtotal">
                 <strong>Subtotal</strong>
-                <strong>$199.97</strong>
+                <strong class="subtotal">$199.97</strong>
             </div>
             <div class="order-shipping">
                 <strong>Shipping</strong>
@@ -221,11 +225,46 @@ export default function checkoutPage() {
             </div>
             <div class="order-total">
                 <strong>Total</strong>
-                <strong>$209.97</strong>
+                <strong class="total">$209.97</strong>
             </div>
         </div>
     `;
     checkoutContentContainer.appendChild(checkoutOrderSummarySection);
+
+    // math logic of price summary
+    const updatePrices = () => {
+        let subtotal = 0;
+        document.querySelectorAll('.order-summary-item').forEach(item => {
+            const quantity = parseInt(item.querySelector('.quantity').textContent);
+            const price = parseFloat(item.querySelector('.quantity').dataset.price);
+            const itemTotal = quantity * price;
+            item.querySelector('.price').textContent = `$${itemTotal.toFixed(2)}`;
+            subtotal += itemTotal;
+        });
+        document.querySelector('.subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        const shipping = 10; 
+        const total = subtotal + shipping;
+        document.querySelector('.total').textContent = `$${total.toFixed(2)}`;
+    };
+
+    checkoutOrderSummarySection.querySelectorAll('.increase-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const quantitySpan = button.previousElementSibling;
+            quantitySpan.textContent = parseInt(quantitySpan.textContent) + 1;
+            updatePrices();
+        });
+    });
+
+    checkoutOrderSummarySection.querySelectorAll('.decrease-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const quantitySpan = button.nextElementSibling;
+            const currentQuantity = parseInt(quantitySpan.textContent);
+            if (currentQuantity > 0) {
+                quantitySpan.textContent = currentQuantity - 1;
+                updatePrices();
+            }
+        });
+    });
 
     //Checkout complete button
     const checkoutCompleteBtn = document.createElement('button');
