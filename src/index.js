@@ -6,7 +6,7 @@ import "./assets/styles/hero.css";
 import "./assets/styles/checkoutPage.css";
 import "./assets/styles/topRated.css";
 import "./assets/styles/products.css";
-
+import "./assets/styles/productDetails.css"
 
 /* product section */
 import "./assets/styles/productSection.css";

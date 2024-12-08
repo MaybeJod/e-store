@@ -29,19 +29,19 @@
   font-weight: 800;
   font-family: "Underrated";
   font-size: 26px;
-  white-space: nowrap; /* Prevents text from wrapping */
-  overflow: hidden; /* Hides overflowing text */
-  display: block;
-  width: 63%; /* Full width of the container */
-  animation: run-text 20s linear infinite; /* Animation properties */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 70%; 
+  animation: run-text 20s linear infinite; 
   }
 
   @keyframes run-text {
     0% {
-      transform: translateX(-100%); /* Move to outside the left edge */
+      transform: translateX(100%); /* Start outside the right edge */
     }
     100% {
-      transform: translateX(100%); /* Start outside the right edge */
+     
+      transform: translateX(-100%); /* Move to outside the left edge */
     }
     
   }

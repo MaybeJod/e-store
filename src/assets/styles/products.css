@@ -3,7 +3,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
-  height: 105%;
+  height: 90%;
   text-align: left;
 }
 #product_image{
@@ -16,7 +16,7 @@
   font-family: var(--body-font);
 }
 #product_heading{
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-family: sans-serif;
   color: rgb(59, 57, 57);
 }
@@ -43,4 +43,10 @@
   margin-top: 5%;
   margin-right: 5%;
   padding: 1%;
+}
+#button_container{
+  display: flex;
+  gap: 7%;
+  justify-content: end;
+  margin-right: 1rem;
 }
