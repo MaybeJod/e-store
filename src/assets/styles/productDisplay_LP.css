@@ -2,20 +2,29 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+ 
+
 }
 .allProducts_btn{
-  width: 15rem;
+  width: 35%;
   height: 3rem;
   background-color:var(--main-yellow);
   align-self: center;
+  color: rgb(83, 82, 82);
   border-radius: 7px;
-  margin-top: 2rem;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-family: var(--heading-font);
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  20% { opacity: 1; }   /* Fully visible */
+  50% { opacity: 0; }  /* Hidden */
+  100% { opacity: 1; } /* Fully visible */
 }
 .lp_productCategory{
   height: 33rem;
   width: 130rem;
+  
   
 }
 .categories_heading{
@@ -27,7 +36,7 @@
   align-content: center;
   border: 2px solid;
   font-weight: 800;
-  font-family: "Underrated";
+  font-family: var(--body-font);
   font-size: 26px;
   white-space: nowrap;
   overflow: hidden;
@@ -46,24 +55,29 @@
     
   }
 .categories_container{
-  display: flex;
-  gap: 1rem;
-  width: 63%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 20px;
+  width: 60%;
+  margin-left: 2rem ;
 }
   .category{
-    height: 28rem;
-    width: 20rem;
-    border: 2px solid;
+    height: 100%;
+    width: 100%;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px 5px rgba(217, 217, 8, 0.9);
+    box-shadow: 15px 15px 15px 5px rgba(217, 217, 8, 0.9);
     cursor: pointer;
   }
     .category_Image{
-      height: 24rem;  
+      height: 20rem;  
       width: 30rem;
       padding-top: 1rem;
     }
     .category_Text{
       text-transform: uppercase;
       text-align: center;
+      font-family: var(--body-font);
+      font-weight: 600;
+      font-size: 1.2rem;
     }
