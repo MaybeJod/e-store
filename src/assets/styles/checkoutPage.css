@@ -1,4 +1,6 @@
-
+.checkout-form-title {
+    font-family: var(--heading-font);
+}
 /* customer infomation grid set */
     .checkout-section {
         display: grid;
