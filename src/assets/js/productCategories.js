@@ -1,5 +1,5 @@
 import resetContent from "../js/components/resetContent.js";
-import fetchProductDetails from "../js/productDetails.js";
+import fetchProductDetails from "./productDetails.js";
 const productSection = document.querySelector("#productSection");
 //const heroSection = document.querySelector('#heroSection');
 //const productCategories = document.querySelector('.lp_productCategory');
