@@ -1,0 +1,348 @@
+.meet-the-team {
+    position: absolute;
+    top: 46px;
+    left: calc(50% - 256px);
+    font-size: 48px;
+    letter-spacing: 1px;
+    line-height: 66px;
+    font-family: UNDERRATED;
+    text-align: left;
+}
+
+.the-people-behind {
+    position: absolute;
+    top: 120px;
+    left: calc(50% - 181px);
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.meet-team-child {
+    position: absolute;
+    top: 186px;
+    left: calc(50% - 674px);
+    border-radius: 22px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    width: 1082px;
+    height: 280px;
+}
+
+.meet-team-item {
+    position: absolute;
+    top: 492px;
+    left: calc(50% - 408px);
+    border-radius: 22px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    width: 1082px;
+    height: 280px;
+}
+
+.meet-team-inner {
+    position: absolute;
+    top: 798px;
+    left: calc(50% - 674px);
+    border-radius: 22px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    width: 1082px;
+    height: 280px;
+}
+
+.rectangle-div {
+    position: absolute;
+    top: 1104px;
+    left: calc(50% - 408px);
+    border-radius: 22px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    width: 1082px;
+    height: 280px;
+}
+
+.meet-team-child1 {
+    position: absolute;
+    top: 1410px;
+    left: calc(50% - 674px);
+    border-radius: 22px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    width: 1082px;
+    height: 280px;
+}
+
+.meet-team-child2 {
+    position: absolute;
+    top: 1716px;
+    left: calc(50% - 408px);
+    border-radius: 22px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    width: 1082px;
+    height: 280px;
+}
+
+.mask-group-icon {
+    width: 228px;
+    position: relative;
+    height: 228px;
+    object-fit: cover;
+}
+
+.zhixuan-wang {
+    position: relative;
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+.head-trainer {
+    position: relative;
+    letter-spacing: 1px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.with-over-a {
+    width: 761px;
+    position: relative;
+    letter-spacing: 1px;
+    line-height: 20px;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+}
+
+.icons-child {
+    width: 22px;
+    position: relative;
+    height: 22px;
+}
+
+.icons {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 12px 0px;
+    gap: 16px;
+}
+
+.details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+.preview {
+    width: 774px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.mask-group-parent {
+    position: absolute;
+    top: 212px;
+    left: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.mask-group-group {
+    position: absolute;
+    top: 518px;
+    left: 338px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.aspect-ratio-keeper-addition {
+    align-self: stretch;
+    max-width: 100%;
+    overflow: hidden;
+    height: 228px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.aspect-ratio {
+    align-self: stretch;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-image: url('Aspect ratio.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: 0;
+}
+
+.icon {
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.icon1 {
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+    display: none;
+    z-index: 2;
+}
+
+.icon2 {
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+    display: none;
+    z-index: 3;
+}
+
+.icon3 {
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+    display: none;
+    z-index: 4;
+}
+
+.image-wrapper {
+    width: 228px;
+    border-radius: 3000px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    gap: 10px;
+}
+
+.image-wrapper-parent {
+    position: absolute;
+    top: 824px;
+    left: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.kiattisak-jod-wongphayak {
+    position: relative;
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    text-transform: uppercase;
+    white-space: pre-wrap;
+}
+
+.image-wrapper-group {
+    position: absolute;
+    top: 1130px;
+    left: 338px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.image-wrapper-container {
+    position: absolute;
+    top: 1436px;
+    left: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.frame-div {
+    position: absolute;
+    top: 1742px;
+    left: 338px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.meet-team {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 2042px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    font-family: 'Noto Sans';
+}
