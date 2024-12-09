@@ -32,6 +32,7 @@ import { fetchAndDisplayProducts } from "./assets/js/fetchProduct";
 
 /* landing page products */
 import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js";
+import {registerLowToHigh, registerHighToLow, sortOnTheBasisOfRating }from "./assets/js/filterFunction.js"
 
 /* landing page */
 import { createLandingPage } from "./assets/js/landingPage.js";
@@ -102,8 +103,6 @@ buttonAllProducts.addEventListener("click", () => {
 	fetchAndDisplayProducts(productSectionElement);
 });
 
-
-
 //[document.querySelector('.a-class'), document.querySelector('.another-class')].forEach(item => {
  // item.addEventListener('click', event => {
     //handle click
@@ -123,30 +122,24 @@ buttonWomen.addEventListener("click", () => {
 		registerLowToHigh(lowToHighPrice, products)
 		const highToLowPrice = document.querySelector('#highToLow');
 		registerHighToLow(highToLowPrice, products);
+		const filterByRating = document.querySelector('#filter_ratingBtn');
+		sortOnTheBasisOfRating(filterByRating,  products);
 	});
 });
-
-function registerLowToHigh(element, products) {
-		element.addEventListener("click",()=>{
-		const sortedProducts = products.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-		sortProducts(sortedProducts);
-	});
-}
-
-function registerHighToLow(element, products) {
-	element.addEventListener("click",()=>{
-	const sortedProducts = products.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-	sortProducts(sortedProducts);
-});
-}
 
 function registerButton(){
 	const viewAllProducts = document.getElementById('allProducts_btn');
-viewAllProducts.addEventListener("click", () => {
+	viewAllProducts.addEventListener("click", () => {
 	resetContent();
 	const apiUrl_allProducts = 'https://fakestoreapi.com/products';
 	fetchProduct(apiUrl_allProducts).then((products) => {
-		sortProducts(products);
+	sortProducts(products);
+	const lowToHighPrice = document.querySelector('#lowToHigh');
+	registerLowToHigh(lowToHighPrice, products);
+	const highToLowPrice = document.querySelector('#highToLow');
+	registerHighToLow(highToLowPrice, products);
+	const filterByRating = document.querySelector('#filter_ratingBtn');
+	sortOnTheBasisOfRating(filterByRating,  products)
 	});
 });
 [document.querySelector("#product-men"), document.querySelector('#men_category')].forEach(item =>{
@@ -154,12 +147,14 @@ viewAllProducts.addEventListener("click", () => {
 		resetContent();
 		const apiUrl_men = 
 		"https://fakestoreapi.com/products/category/men's clothing";
-	fetchProduct(apiUrl_men).then((products) => {
+		fetchProduct(apiUrl_men).then((products) => {
 		sortProducts(products);
 		const lowToHighPrice = document.querySelector('#lowToHigh');
 		registerLowToHigh(lowToHighPrice, products);
 		const highToLowPrice = document.querySelector('#highToLow');
 		registerHighToLow(highToLowPrice, products);
+		const filterByRating = document.querySelector('#filter_ratingBtn');
+		sortOnTheBasisOfRating(filterByRating,  products)
 	});
 });
 });
@@ -172,6 +167,12 @@ viewAllProducts.addEventListener("click", () => {
 	"https://fakestoreapi.com/products/category/women's clothing";
 	fetchProduct(apiUrl_women).then((products) => {
 	sortProducts(products);
+	const lowToHighPrice = document.querySelector('#lowToHigh');
+		registerLowToHigh(lowToHighPrice, products);
+		const highToLowPrice = document.querySelector('#highToLow');
+		registerHighToLow(highToLowPrice, products);
+		const filterByRating = document.querySelector('#filter_ratingBtn');
+		sortOnTheBasisOfRating(filterByRating,  products)
 	});
 });
 });
@@ -183,6 +184,12 @@ viewAllProducts.addEventListener("click", () => {
 		const apiUrl_jewelery = "https://fakestoreapi.com/products/category/jewelery";
 		fetchProduct(apiUrl_jewelery).then((products) => {
 		sortProducts(products);
+		const lowToHighPrice = document.querySelector('#lowToHigh');
+		registerLowToHigh(lowToHighPrice, products);
+		const highToLowPrice = document.querySelector('#highToLow');
+		registerHighToLow(highToLowPrice, products);
+		const filterByRating = document.querySelector('#filter_ratingBtn');
+		sortOnTheBasisOfRating(filterByRating,  products)
 		});	
 });
 });
@@ -193,6 +200,12 @@ viewAllProducts.addEventListener("click", () => {
 	const apiUrl_electronics ="https://fakestoreapi.com/products/category/electronics";
 	fetchProduct(apiUrl_electronics).then((products) => {
 		sortProducts(products);
+		const lowToHighPrice = document.querySelector('#lowToHigh');
+		registerLowToHigh(lowToHighPrice, products);
+		const highToLowPrice = document.querySelector('#highToLow');
+		registerHighToLow(highToLowPrice, products);
+		const filterByRating = document.querySelector('#filter_ratingBtn');
+		sortOnTheBasisOfRating(filterByRating,  products)
 	});
 });
 });
