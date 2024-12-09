@@ -128,8 +128,8 @@ buttonWomen.addEventListener("click", () => {
 });
 
 function registerButton(){
-	const viewAllProducts = document.getElementById('allProducts_btn');
-	viewAllProducts.addEventListener("click", () => {
+	[document.querySelector('#shop_all'), document.getElementById('allProducts_btn')].forEach(item =>{
+		item.addEventListener("click", () => {
 	resetContent();
 	const apiUrl_allProducts = 'https://fakestoreapi.com/products';
 	fetchProduct(apiUrl_allProducts).then((products) => {
@@ -141,6 +141,7 @@ function registerButton(){
 	const filterByRating = document.querySelector('#filter_ratingBtn');
 	sortOnTheBasisOfRating(filterByRating,  products)
 	});
+});
 });
 [document.querySelector("#product-men"), document.querySelector('#men_category')].forEach(item =>{
 	item.addEventListener("click", () => {
