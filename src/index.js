@@ -64,6 +64,8 @@ homeElement.addEventListener("click", () => {
 	homeReset();
 });
 
+
+
 /* landing-page */
 /* hero and banner */
 /* createLandingPage();
@@ -90,6 +92,7 @@ renderCartPage();
 document.addEventListener("DOMContentLoaded", () => {
 	createLandingPage();
 	createTrendingSection();
+	createTopRatedGrid('https://fakestoreapi.com/products');
 	displayCategoriesOnLandingPage();
 	registerButton();
 });
