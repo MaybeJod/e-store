@@ -50,11 +50,6 @@ homeElement.addEventListener("click", () => {
 	homeReset();
 });
 
-/* creates top rated products grid */
-document.addEventListener("DOMContentLoaded", () => {
-	createTopRatedGrid("https://fakestoreapi.com/products");
-});
-
 /* run cart function*/
 renderCartPage();
 
@@ -62,6 +57,7 @@ renderCartPage();
 document.addEventListener("DOMContentLoaded", () => {
 	createLandingPage();
 	createTrendingSection();
+	createTopRatedGrid('https://fakestoreapi.com/products');
 	displayCategoriesOnLandingPage();
 	productButtons();
 });

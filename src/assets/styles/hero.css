@@ -142,9 +142,8 @@ body {
 .hero-right img{
     justify-content: flex-end;
     position: relative;
-    width: 75%;
-    margin-left: 20%;
-    margin-bottom: 10%;
+    width: 85%;
+    margin-left: 10%;
 }
 
 .hero-right h3{
@@ -299,4 +298,50 @@ padding: 1%;
   gap: 5%;
   justify-content: center;
   align-items: center;
+}
+
+
+@media (max-width: 768px) {
+  /* Adjust overall body layout */
+  body {
+    padding: 10px;
+  }
+
+  /* Hero section adjustments */
+  .hero {
+    height: auto; /* Allow height to adjust dynamically */
+    padding: 10px;
+  }
+
+  .hero-left {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+
+  .hero-left h1 {
+    font-size: 6rem; /* Scale down font size */
+    text-shadow: 10px 10px 0 black;
+    margin-bottom: 10px; /* Adjust spacing */
+  }
+
+  .hero-left a {
+    font-size: 1.5rem; /* Adjust button font size */
+    padding: 10px 15px; /* Adjust padding */
+    margin: 10px auto; /* Center the button */
+  }
+
+  .hero-right {
+    max-width: 100%; /* Full width */
+  }
+
+  .hero-right img {
+    width: 90%; /* Scale down the image width */
+    margin: 0 auto; /* Center the image */
+  }
+
+  .hero-right h3 {
+    font-size: 1.2rem; /* Reduce font size */
+    top: auto; /* Remove fixed positioning */
+    bottom: 10px;
+    right: 10px
+  }
 }
