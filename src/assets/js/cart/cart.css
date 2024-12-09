@@ -1,3 +1,8 @@
+#cart {
+    min-height: 80svh;
+}
+
+
 .your-cart {
     position: absolute;
     top: 36px;
@@ -315,3 +320,4 @@ flex: 1;
     align-items: center;
     justify-content: space-between;
 }
+
