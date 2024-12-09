@@ -8,6 +8,7 @@ import "./assets/styles/topRated.css";
 import "./assets/styles/products.css";
 import "./assets/styles/productDetails.css";
 import "./assets/styles/filterFunction.css";
+import "./assets/js/about/about2.css";
 /* product section css*/
 import "./assets/styles/productSection.css";
 
@@ -43,11 +44,21 @@ import { sortProducts } from "./assets/js/productCategories";
 /* cart */
 import renderCartPage from "./assets/js/cart/cartPage.js";
 
+/* meet the team */
+import renderMeetTeam from "./assets/js/about/about.js";
+
 /* when user clicks on nav logo */
 const homeElement = document.querySelector("#home-reset");
 homeElement.addEventListener("click", () => {
 	resetContent();
 	homeReset();
+});
+
+/* meet the team call */
+const aboutButton = document.querySelector(".nav-about-us");
+aboutButton.addEventListener("click", () => {
+	resetContent();
+	renderMeetTeam();
 });
 
 /* run cart function*/
@@ -57,7 +68,7 @@ renderCartPage();
 document.addEventListener("DOMContentLoaded", () => {
 	createLandingPage();
 	createTrendingSection();
-	createTopRatedGrid('https://fakestoreapi.com/products');
+	createTopRatedGrid("https://fakestoreapi.com/products");
 	displayCategoriesOnLandingPage();
 	productButtons();
 });

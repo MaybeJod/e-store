@@ -1,0 +1,65 @@
+.team-member {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    border: 2px solid #000;
+    border-radius: 22px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .member-image img {
+    width: 228px;
+    height: 228px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .member-details {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .member-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .member-role {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .member-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .member-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .member-social a {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .member-social a:hover {
+    transform: scale(1.2);
+  }
+  
+  .member-social img {
+    width: 100%;
+    height: auto;
+  }
+  
+  
