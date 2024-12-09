@@ -8,28 +8,22 @@ import "./assets/styles/topRated.css";
 import "./assets/styles/products.css";
 import "./assets/styles/productDetails.css";
 import "./assets/styles/filterFunction.css";
-
-/* product section */
+/* product section css*/
 import "./assets/styles/productSection.css";
+
 /*-----imgs and icons-----*/
 import "./assets/icons-and-logo/Jasmiz-Logo.svg";
 import "./assets/icons-and-logo/Shopping-Cart-Icon.svg";
 import "./assets/icons-and-logo/Favorite Icon.svg";
 import "./assets/icons-and-logo/Material Icon Person.svg";
+
 /*-----js-----*/
 /* fetch api */
 import fetchProduct from "./assets/js/fetchProduct";
-/* display checkoutpage */
-//import checkoutPage from "./assets/js/checkoutPage";
-/* checkoutPage(); */
 /* reset content */
 import resetContent from "./assets/js/components/resetContent.js";
 /* go to home */
 import homeReset from "./assets/js/components/home-reset.js";
-
-/* import temp products to add to cart */
-import { fetchAndDisplayProducts } from "./assets/js/fetchProduct";
-
 /* landing page products */
 import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js";
 import {
@@ -41,19 +35,10 @@ import {
 /* landing page */
 import { createLandingPage } from "./assets/js/landingPage.js";
 import { createTrendingSection } from "./assets/js/trendingProducts.js";
-
 import { createTopRatedGrid } from "./assets/js/landing-page/topRated.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-	createTopRatedGrid("https://fakestoreapi.com/products");
-});
-
-/* display product */
-//import displayProduct from "./assets/js/displayProduct";
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
-
-/* import {removeDivFromLandingPage} from "./assets/js/productCategories"; */
 
 /* cart */
 import renderCartPage from "./assets/js/cart/cartPage.js";
@@ -65,27 +50,13 @@ homeElement.addEventListener("click", () => {
 	homeReset();
 });
 
-/* landing-page */
-/* hero and banner */
-/* createLandingPage();
-createTrendingSection(); */
+/* creates top rated products grid */
+document.addEventListener("DOMContentLoaded", () => {
+	createTopRatedGrid("https://fakestoreapi.com/products");
+});
 
 /* run cart function*/
 renderCartPage();
-
-/* checkout page showcase */
-/* document.addEventListener('DOMContentLoaded', () => {
-	const checkoutBtn = document.querySelector('#checkoutButton');
-	console.log(checkoutBtn)
-	if (checkoutBtn) {
-		checkoutBtn.addEventListener('click', () => {
-		resetContent();
-		checkoutPage();
-		}); 
-	} else {
-		console.warn('checkout button not found');
-	}
-}); */
 
 /* landing page product categories */
 document.addEventListener("DOMContentLoaded", () => {
@@ -94,21 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	displayCategoriesOnLandingPage();
 	productButtons();
 });
-
-/* nav drop down for categories */
-//const buttonAllProducts = document.querySelector("#product-all");
-/* buttonAllProducts.addEventListener("click", () => {
-	const productSectionElement = document.querySelector("#productSection");
-	resetContent();
-	fetchAndDisplayProducts(productSectionElement);
-}); */
-
-//[document.querySelector('.a-class'), document.querySelector('.another-class')].forEach(item => {
-// item.addEventListener('click', event => {
-//handle click
-// })
-//})
-//const buttonMen = document.querySelector("#product-men");
 
 function productButtons() {
 	[
