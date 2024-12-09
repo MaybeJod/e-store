@@ -15,6 +15,7 @@ export function createLandingPage() {
 	const heroLink = document.createElement("a");
 	heroLink.href = "#";
 	heroLink.textContent = "SHOP ALL";
+	heroLink.id = "shop_all";
 	heroLeft.appendChild(heroLink);
 
 	const heroRight = document.createElement("div");
