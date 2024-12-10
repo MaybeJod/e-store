@@ -2,12 +2,8 @@ import resetContent from "../js/components/resetContent.js";
 import fetchProductDetails from "./productDetails.js";
 
 import { addItemToCart } from "../js/cart/cartOperations.js";
-import {addToWishlist} from  "./wishList.js";
 
 const productSection = document.querySelector("#productSection");
-//const heroSection = document.querySelector('#heroSection');
-//const productCategories = document.querySelector('.lp_productCategory');
-//const main = document.getElementsByTagName('main')
 
 export async function sortProducts(product) {
 	let productContainer = document.querySelector(".product-container");
@@ -58,14 +54,6 @@ export async function sortProducts(product) {
 			resetContent();
 			fetchProductDetails(productItem.id);
 		});
-		const wishListBtns = document.getElementsByName('wishlist_div');
-		
-		wishListBtns.forEach((button, counter)=>{
-			button.addEventListener('click', ()=>{
-				addToWishlist(button.id, products);
-			})
-		});
-
 	}
 }
 
@@ -104,7 +92,6 @@ async function createProductElement(product) {
 	// Attach event listener to the Add to Cart button
 	const addToCartButton = productElement.querySelector(".add-to-cart");
 	addToCartButton.addEventListener("click", () => {
-		//const productId = parseInt(e.target.getAttribute("data-id"), 10);
 		if (product) {
 			addItemToCart(product); // Pass the product object directly to the cart function
 			//alert(`Added "${product.title}" to cart!`);
