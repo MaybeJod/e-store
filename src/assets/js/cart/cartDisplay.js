@@ -40,8 +40,6 @@ export function renderCart(container) {
             </div>
             <div class="cart-item-details">
                 <h3>${title}</h3>
-                <p class="item-meta">Size: Large</p>
-                <p class="item-meta">Color: White</p>
                 <p class="item-price">$${price}</p>
             </div>
             <div class="quantity-controls">

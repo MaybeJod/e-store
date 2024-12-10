@@ -38,5 +38,45 @@
     cursor: pointer;
     font-size: 1.1rem;
     background-color: rgb(189, 187, 187);
-   
   }
+
+  @media (max-width: 375px) {
+    .product_detail {
+      flex-direction: column; 
+      gap: 1rem; 
+      margin: 0; 
+    }
+  
+    .product_detail #product_image {
+      width: 100%; 
+      height: auto; 
+      margin: 0; 
+      padding: 1rem;
+    }
+  
+    #info_div {
+      margin: 2rem 0;
+    }
+  
+    #info_div #product_heading {
+      font-size: 1.5rem; 
+    }
+  
+    #info_div #product_discription {
+      font-size: 1rem; 
+    }
+  
+    #info_div #product_price {
+      font-size: 1.5rem; 
+    }
+  
+    #info_div .product-rating {
+      font-size: 1rem; 
+    }
+  
+    #info_div #AddToCart_btn {
+      width: 100%;
+      font-size: 1rem; 
+    }
+  }
+  
