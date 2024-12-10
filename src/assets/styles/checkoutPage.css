@@ -347,7 +347,7 @@
 .checkout-order-summary-section {
     grid-area: b;
     align-self: start;
-    background-color: #d2d2d2;
+    background-color: #ffffff;
 }
 
 .checkout-complete-message {
@@ -372,23 +372,18 @@
     font-weight: 600;
 }
 
-.decrease,
-.increase {
-    border-radius: 50px;
-    background-color: var(--main-black);
-    color: var(--main-white);
-}
 
 .subtotal-a,
 .delivery-b,
 .total-c {
     margin-bottom: 10px;
+    margin-top: 10px;
     align-self: flex-end;
+    font-family: var(--body-font);
+    font-weight: 500;
 }
 
 .subtotal-all {
-    font-family: var(--body-font);
-    font-weight: 500;
     display: flex;
     flex-direction: column;
     justify-content: end;
