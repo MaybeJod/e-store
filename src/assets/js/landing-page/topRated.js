@@ -1,3 +1,7 @@
+import fetchProductDetails from "../productTopDetails.js"; // For productTopDetails.js
+import resetContent from "../components/resetContent.js"; // For resetContent.js
+
+
 export async function createTopRatedGrid(apiUrl) {
     try {
         // Fetch products
@@ -51,6 +55,13 @@ export async function createTopRatedGrid(apiUrl) {
 
             productCard.appendChild(img);
             productCard.appendChild(productInfo);
+
+            // Add click event to display product details
+            productCard.addEventListener("click", () => {
+                resetContent(); // Clear the current content
+                fetchProductDetails(product.id); // Fetch and display product details
+            });
+
             grid.appendChild(productCard); // Append each product card to the grid
         });
     } catch (error) {

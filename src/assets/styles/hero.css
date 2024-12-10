@@ -301,7 +301,7 @@ padding: 1%;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 375px) {
   /* Adjust overall body layout */
   body {
     padding: 10px;
