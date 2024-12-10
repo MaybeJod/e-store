@@ -1,101 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  font-family: inherit;
-}
-
-html {
-  /* color-scheme: dark light; */
-  hanging-punctuation: first last;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100svh;
-}
-
-img,
-picture,
-svg,
-video {
-  display: block;
-  font-style: italic;
-  max-width: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
-p {
-  max-width: 75ch;
-  text-wrap: pretty;
-}
-
-button,
-input:is([type="submit"], [type="button"], [type="checkbox"]) {
-  color: inherit;
-  cursor: pointer;
-  letter-spacing: inherit;
-}
-
-input[type="number"] {
-  appearance: normal;
-  -moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-table {
-  font-variant-numeric: tabular-nums;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  :has(:target) {
-    scroll-behavior: smooth;
-    scroll-padding-top: 3rem;
-  }
-}
-
-
-/* import heading font */
-@font-face {
-    font-family: "Underrated";
-    src: url(../fonts/UNDERRATED-UltraBold\ Personal\ Use.otf);
-}
-
-/* import body font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-:root {
-    --main-white: #ffffff;
-    --main-black: #000000;
-    --main-yellow: #ffff00;
-    --heading-font: "Underrated";
-    --body-font:"Noto Sans", serif;
-}
-
-.page-container {
-    width: 90dvw;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .hero{
   
@@ -115,7 +17,7 @@ body {
 }
 
 .hero-left h1{
-    font-size: 17rem;
+    font-size: 17em;
     color: #ffff00;
     text-shadow: 25px 25px 0 black;
     margin-bottom: 0;
@@ -157,6 +59,7 @@ padding: 1%;
 }
 
 .hero-banner{
+  
   padding-top: 1%;
     display: flex;
     flex-direction: row;
@@ -166,9 +69,11 @@ padding: 1%;
     background-color: #000000;
     color: #ffff00;
     width: 100%;
+    padding-left: 200px;
     height: 2rem;
     font-size: 1.8rem;
     padding: 3%;
+    
 
 }
 
@@ -302,46 +207,48 @@ padding: 1%;
 
 
 @media (max-width: 375px) {
-  /* Adjust overall body layout */
-  body {
-    padding: 10px;
-  }
+  .hero{
+    height: 100%;
+}
 
-  /* Hero section adjustments */
-  .hero {
-    height: auto; /* Allow height to adjust dynamically */
-    padding: 10px;
-  }
+.hero-left{
 
-  .hero-left {
-    max-width: 100%; /* Full width for smaller screens */
-  }
+    max-width: 50%;
 
-  .hero-left h1 {
-    font-size: 6rem; /* Scale down font size */
-    text-shadow: 10px 10px 0 black;
-    margin-bottom: 10px; /* Adjust spacing */
-  }
+}
 
-  .hero-left a {
-    font-size: 1.5rem; /* Adjust button font size */
-    padding: 10px 15px; /* Adjust padding */
-    margin: 10px auto; /* Center the button */
-  }
+.hero-left h1{
+    font-size: 4em;
+    text-shadow: 8px 8px 0 black;
 
-  .hero-right {
-    max-width: 100%; /* Full width */
-  }
+}
+.hero-left a{
+  font-size: 1rem;
+}
 
-  .hero-right img {
-    width: 90%; /* Scale down the image width */
-    margin: 0 auto; /* Center the image */
-  }
+.hero-right{
+    flex: 1;
+    max-width: 50%;
+    justify-content: flex-end;
+}
 
-  .hero-right h3 {
-    font-size: 1.2rem; /* Reduce font size */
-    top: auto; /* Remove fixed positioning */
-    bottom: 10px;
-    right: 10px
-  }
+.hero-right img{
+
+    margin-left: 15%;
+}
+
+.hero-right h3{
+
+font-size: 0.8rem;
+top: 180px;
+
+right: 23px;
+
+}
+
+.hero-banner{
+
+    font-size: 0.5rem;
+}
+
 }
