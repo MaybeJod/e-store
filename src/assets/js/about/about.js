@@ -1,12 +1,15 @@
 /* imgs */
 import ash from "./about_assets/ash.png";
-import jod from "./about_assets/jod.JPG";
+import jod from "./about_assets/jod03.png";
 import swarna from "./about_assets/swarna.png";
+import anitha from "./about_assets/anitha01.png";
+import mohamed from "./about_assets/mohamed 02.png"
 
 /* svg */
 import githubSvg from "./about_assets/github.svg";
 import instaSvg from "./about_assets/insta01.svg";
 import linkedinSvg from "./about_assets/linkedin01.svg";
+
 
 const teamMembers = [
 	{
@@ -16,9 +19,9 @@ const teamMembers = [
 			"With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures.",
 		image: ash,
 		social: {
-			linkedin: "https://linkedin.com/in/zhixuanwang",
-			instagram: "https://instagram.com/zhixuanwang",
-			github: "https://github.com/zhixuanwang",
+			linkedin: "https://www.linkedin.com/in/zhixuan-wang-88b82132a/",
+			instagram: "https://www.instagram.com/asher_wzx/?hl=en",
+			github: " https://github.com/Asher-zx",
 		},
 	},
 	{
@@ -28,9 +31,9 @@ const teamMembers = [
 			"With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures.",
 		image: swarna,
 		social: {
-			linkedin: "https://linkedin.com/in/swarnalekha",
-			instagram: "https://instagram.com/swarnalekha",
-			github: "https://github.com/swarnalekha",
+			linkedin: "https://www.linkedin.com/in/swarna-lekha-05a82a9a/",
+			instagram: "https://www.instagram.com/swarnahari19/?hl=en",
+			github: "https://github.com/swarna1204",
 		},
 	},
 	{
@@ -38,11 +41,11 @@ const teamMembers = [
 		role: "Head Trainer",
 		description:
 			"With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures.",
-		image: "./assets/04swarna.png",
+		image: anitha,
 		social: {
-			linkedin: "https://linkedin.com/in/swarnalekha",
-			instagram: "https://instagram.com/swarnalekha",
-			github: "https://github.com/swarnalekha",
+			linkedin: "https://www.linkedin.com/in/anita-kumari-91160723/",
+			instagram: "https://instagram.com/anita",
+			github: "https://github.com/Anita-Kumari1987",
 		},
 	},
 	{
@@ -52,9 +55,9 @@ const teamMembers = [
 			"With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures.",
 		image: jod,
 		social: {
-			linkedin: "https://linkedin.com/in/swarnalekha",
-			instagram: "https://instagram.com/swarnalekha",
-			github: "https://github.com/swarnalekha",
+			linkedin: "https://www.linkedin.com/in/kiattisak-jod-wongphayak/",
+			instagram: "https://www.instagram.com/intejod/?hl=en",
+			github: "https://github.com/maybejod/",
 		},
 	},
 	{
@@ -62,11 +65,11 @@ const teamMembers = [
 		role: "Head Trainer",
 		description:
 			"With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures.",
-		image: "./assets/04swarna.png",
+		image: mohamed,
 		social: {
-			linkedin: "https://linkedin.com/in/swarnalekha",
-			instagram: "https://instagram.com/swarnalekha",
-			github: "https://github.com/swarnalekha",
+			linkedin: "https://www.linkedin.com/in/mohamed-guled-58b015192/",
+			instagram: "https://www.instagram.com/padaawaan/?hl=en",
+			github: "https://github.com/paddystudios",
 		},
 	},
 ];
