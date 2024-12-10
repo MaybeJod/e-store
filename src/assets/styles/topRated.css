@@ -67,3 +67,10 @@
     color: #333;
     margin: 5px 0;
 }
+
+#topRated_products{
+    cursor: pointer;
+}
+#topRated_products:hover{
+    color: yellow;
+}
