@@ -96,7 +96,7 @@ itemWrap.appendChild(itemElement)
 	// Event listeners
 	document.querySelector("#checkoutButton").addEventListener("click", () => {
 		resetContent();
-		checkoutPage();
+		checkoutPage(cart);
 	});
 
 	container.querySelectorAll(".decrease").forEach((button) => {

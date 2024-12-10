@@ -1,14 +1,16 @@
-import {
-	getCart,
-	updateItemQuantity,
-	removeItemFromCart,
-} from "./cart/cartOperations";
+import { updateItemQuantity, removeItemFromCart } from "./cart/cartOperations.js";
+import { getCart } from "./cart/cartOperations.js"; // 确保引入 getCart 函数
 
-export default function checkoutPage(cartItems) {
+export default function checkoutPage(cart) {
     const checkoutElement = document.getElementById('checkout');
     if (checkoutElement) {
         console.log('Checkout page is loaded');
     }
+    if (!Array.isArray(cart)) {
+        console.error('Invalid cartItems:', cart);
+        return; // Exit if cartItems is not an array
+    }
+
 
     const createForm = (title) => {
         const checkoutFormContainer = document.createElement('div');
@@ -192,7 +194,7 @@ export default function checkoutPage(cartItems) {
     checkoutOrderSummarySection.classList.add('checkout-order-summary-section');
     // math logic of price summary
         let subtotal = 0;
-        cartItems.forEach(item => {
+        cart.forEach(item => {
             const { id, title, price, quantity, image } = item;
             subtotal += price * quantity;
     
@@ -200,16 +202,21 @@ export default function checkoutPage(cartItems) {
             itemElement.classList.add("cart-item");
     
             itemElement.innerHTML = `
-                <img src="${image}" alt="${title}" class="cart-item-image click1" />
-                <div class="cart-item-details cart-con">
-                    <h3>${title}</h3>
-                    <p>Price: $${price}</p>
-                    <p>Quantity: ${quantity}</p>
-                    <button class="decrease" data-id="${id}">-</button>
-                    <span>${quantity}</span>
-                    <button class="increase" data-id="${id}">+</button>
-                    <button class="remove" data-id="${id}">Remove</button>
-                </div>
+            <div class="item-image-container">
+				<img src="${image}" alt="${title}" class="cart-item-image" />
+			</div>
+			<div class="cart-item-details">
+				<h3>${title}</h3>
+				<p class="item-meta">Size: Large</p>
+				<p class="item-meta">Color: White</p>
+				<p class="item-price">$${price}</p>
+			</div>
+			<div class="quantity-controls">
+				<button class="quantity-button decrease" data-id="${id}">-</button>
+				<span class="quantity">${quantity}</span>
+				<button class="quantity-button increase" data-id="${id}">+</button>
+			</div>
+			<button class="remove" data-id="${id}">🗑️</button>
             `;
             checkoutOrderSummarySection.appendChild(itemElement);
         });    
@@ -231,35 +238,43 @@ export default function checkoutPage(cartItems) {
         checkoutContentContainer.appendChild(checkoutOrderSummarySection);
 
     //event listener
-/*     checkoutOrderSummarySection.querySelectorAll(".decrease").forEach((button) => {
-		button.addEventListener("click", (e) => {
-			const productId = parseInt(e.target.dataset.id, 10);
-			updateItemQuantity(
-				productId,
-				getCart().find((item) => item.id === productId).quantity - 1
-			);
-			checkoutPage(cartItems); // Re-render
-		});
-	});
+/*     checkoutOrderSummarySection.querySelectorAll('.decrease').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productId = parseInt(e.target.dataset.id, 10);
+            const itemElement = e.target.closest('.cart-item');
+            const quantityElement = itemElement.querySelector('.quantity'); // Select the quantity element
 
-	checkoutOrderSummarySection.querySelectorAll(".increase").forEach((button) => {
-		button.addEventListener("click", (e) => {
-			const productId = parseInt(e.target.dataset.id, 10);
-			updateItemQuantity(
-				productId,
-				getCart().find((item) => item.id === productId).quantity + 1
-			);
-			checkoutPage(cartItems); // Re-render
-		});
-	});
+            if (quantityElement) { // Check if quantityElement exists
+                const currentQuantity = parseInt(quantityElement.textContent, 10);
+                if (currentQuantity > 1) {
+                    updateItemQuantity(productId, currentQuantity - 1);
+                } else {
+                    removeItemFromCart(productId);
+                }
+                checkoutPage(getCart()); // Re-render checkout page with updated cart
+            } else {
+                console.error('Quantity element not found for product ID:', productId);
+            }
+        });
+    });
 
-	checkoutOrderSummarySection.querySelectorAll(".remove").forEach((button) => {
-		button.addEventListener("click", (e) => {
-			const productId = parseInt(e.target.dataset.id, 10);
-			removeItemFromCart(productId);
-			checkoutPage(cartItems); // Re-render
-		});
-	}); */
+    checkoutOrderSummarySection.querySelectorAll('.increase').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productId = parseInt(e.target.dataset.id, 10);
+            const itemElement = e.target.closest('.cart-item');
+            const quantityElement = parseInt(itemElement.querySelector('.quantity').textContent, 10);
+            updateItemQuantity(productId, quantityElement + 1);
+            checkoutPage(getCart()); // Re-render checkout page with updated cart
+        });
+    });
+
+    checkoutOrderSummarySection.querySelectorAll('.remove').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productId = parseInt(e.target.dataset.id, 10);
+            removeItemFromCart(productId);
+            checkoutPage(getCart()); // Re-render checkout page with updated cart
+        });
+    }); */
 
 
     //Checkout complete button
