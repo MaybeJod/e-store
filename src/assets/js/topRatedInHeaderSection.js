@@ -18,6 +18,13 @@ export async function createTopRatedproducts(apiUrl) {
       productSection.appendChild(product_container);
       product_container.innerHTML = '';
 
+    //Added heading:
+      const heading = document.createElement('h1');
+      heading.innerText = 'Top Rated Products';
+      heading.id = 'header_topRated';
+      product_container.appendChild(heading);
+
+
       // Add Product Grid
       const grid = document.createElement("div");
       grid.classList.add("grid-container"); // Apply grid-container styling to this div
