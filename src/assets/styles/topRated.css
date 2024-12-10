@@ -1,86 +1,69 @@
-/* Import heading font */
-@font-face {
-    font-family: "Underrated";
-    src: url(../fonts/UNDERRATED-UltraBold\ Personal\ Use.otf);
+
+#topRated {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
-/* Import body font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Grid container styling */
+.trending-section {
+    text-align: center;
+    width: 100%; 
+}
+
+.trending {
+    font-family: "Underrated", sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
     grid-template-rows: repeat(2, auto);  /* 2 rows */
     gap: 20px;
-    padding: 20px;
     width: 90%;
     max-width: 1200px;
-    margin: 20px auto;
+    padding: 20px;
 }
 
-/* Product image styling */
-.product-img img {
-    max-width: 50%;
-    height: auto;
-    border-radius: 8px;
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 0px;
+    padding: 10%;
+    box-shadow: 0 0 15px rgba(194, 194, 194, 0.238);
+}
+
+.product-card img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
     margin-bottom: 10px;
 }
 
-/* Product info styling */
 .product-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
     font-family: "Noto Sans", serif;
 }
 
-/* Product title styling */
-.product h3 {
-    font-family: "Noto Sans", serif;
+.product-info h3 {
     font-size: 1em;
     margin: 10px 0;
-    
 }
 
-/* Product price styling */
-.product p {
-    font-family: "Noto Sans", serif;
+.product-info p {
     font-size: 0.9em;
     color: #333;
     margin: 5px 0;
-}
-
-
-.product-card img{
-    display: flex;
-    justify-content: center;
-    width: 250px; /* Set a consistent width */
-    height: 250px; /* Set a consistent height */
-    object-fit: contain;
-
-}
-
-.product-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.product-card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #ffffff;
-    border-radius: 30px;
-    padding: 10%;
-    box-shadow: 0 0 15px rgba(226, 226, 226, 0.7); 
-}
-
-.product-info{
-    display: flex;
-    justify-content: center;
 }

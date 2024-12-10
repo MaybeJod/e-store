@@ -15,6 +15,7 @@ export function createLandingPage() {
 	const heroLink = document.createElement("a");
 	heroLink.href = "#";
 	heroLink.textContent = "SHOP ALL";
+	heroLink.id = "shop_all";
 	heroLeft.appendChild(heroLink);
 
 	const heroRight = document.createElement("div");
@@ -60,11 +61,6 @@ export function createLandingPage() {
 
 	const productsHeader = document.createElement("div");
 	productsHeader.classList.add("products");
-
-	const newArrivals = document.createElement("h1");
-	newArrivals.textContent = "NEW ARRIVALS";
-	newArrivals.classList.add("arrivals");
-	productsHeader.appendChild(newArrivals);
 
 	// Append Hero and Hero Banner to the Body
 	document.querySelector("#heroSection").appendChild(hero);
