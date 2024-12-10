@@ -46,6 +46,10 @@ export async function createTopRatedproducts(apiUrl) {
 
           productCard.appendChild(img);
           productCard.appendChild(productInfo);
+          productCard.addEventListener("click", () => {
+            resetContent(); // Clear the current content
+            fetchProductDetails(product.id); // Fetch and display product details
+        });
           grid.appendChild(productCard); // Append each product card to the grid
           
       });
