@@ -182,10 +182,3 @@ topRatedHeading.addEventListener("click", () => {
 	//createTopRatedGrid('https://fakestoreapi.com/products');
 	createTopRatedproducts("https://fakestoreapi.com/products");
 });
-
-/* when user clicks go home button from checkout page */
-/* const checkoutHomeElement = document.querySelector("#checkout-backtohome");
-checkoutHomeElement.addEventListener("click", () => {
-	resetContent();
-	homeReset();
-}); */

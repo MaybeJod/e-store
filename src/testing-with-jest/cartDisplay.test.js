@@ -1,3 +1,4 @@
+// testing the sum function for the add to cart page and checkout page
 const {
 	calculateOrderSummary,
 } = require("../assets/js/cart/cartCalculation.js");
