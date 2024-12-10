@@ -38,7 +38,7 @@ import {
 import { createLandingPage } from "./assets/js/landingPage.js";
 import { createTrendingSection } from "./assets/js/trendingProducts.js";
 import { createTopRatedGrid } from "./assets/js/landing-page/topRated.js";
-import { createTopRatedproducts} from "./assets/js/topRatedInHeaderSection.js";
+import { createTopRatedproducts } from "./assets/js/topRatedInHeaderSection.js";
 
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
@@ -92,8 +92,6 @@ function productButtons() {
 				registerHighToLow(highToLowPrice, products);
 				const filterByRating = document.querySelector("#filter_ratingBtn");
 				sortOnTheBasisOfRating(filterByRating, products);
-
-				
 			});
 		});
 	});
@@ -178,9 +176,16 @@ function productButtons() {
 		});
 	});
 }
-const topRatedHeading = document.querySelector('#topRated_products');
-topRatedHeading.addEventListener('click', ()=>{
+const topRatedHeading = document.querySelector("#topRated_products");
+topRatedHeading.addEventListener("click", () => {
 	resetContent();
 	//createTopRatedGrid('https://fakestoreapi.com/products');
-	createTopRatedproducts('https://fakestoreapi.com/products')
+	createTopRatedproducts("https://fakestoreapi.com/products");
 });
+
+/* when user clicks go home button from checkout page */
+/* const checkoutHomeElement = document.querySelector("#checkout-backtohome");
+checkoutHomeElement.addEventListener("click", () => {
+	resetContent();
+	homeReset();
+}); */
