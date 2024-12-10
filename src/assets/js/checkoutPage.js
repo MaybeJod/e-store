@@ -211,12 +211,6 @@ export default function checkoutPage(cart) {
 				<p class="item-meta">Color: White</p>
 				<p class="item-price">$${price}</p>
 			</div>
-			<div class="quantity-controls">
-				<button class="quantity-button decrease" data-id="${id}">-</button>
-				<span class="quantity">${quantity}</span>
-				<button class="quantity-button increase" data-id="${id}">+</button>
-			</div>
-			<button class="remove" data-id="${id}">🗑️</button>
             `;
             checkoutOrderSummarySection.appendChild(itemElement);
         });    
@@ -237,44 +231,6 @@ export default function checkoutPage(cart) {
 
         checkoutContentContainer.appendChild(checkoutOrderSummarySection);
 
-    //event listener
-/*     checkoutOrderSummarySection.querySelectorAll('.decrease').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const productId = parseInt(e.target.dataset.id, 10);
-            const itemElement = e.target.closest('.cart-item');
-            const quantityElement = itemElement.querySelector('.quantity'); // Select the quantity element
-
-            if (quantityElement) { // Check if quantityElement exists
-                const currentQuantity = parseInt(quantityElement.textContent, 10);
-                if (currentQuantity > 1) {
-                    updateItemQuantity(productId, currentQuantity - 1);
-                } else {
-                    removeItemFromCart(productId);
-                }
-                checkoutPage(getCart()); // Re-render checkout page with updated cart
-            } else {
-                console.error('Quantity element not found for product ID:', productId);
-            }
-        });
-    });
-
-    checkoutOrderSummarySection.querySelectorAll('.increase').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const productId = parseInt(e.target.dataset.id, 10);
-            const itemElement = e.target.closest('.cart-item');
-            const quantityElement = parseInt(itemElement.querySelector('.quantity').textContent, 10);
-            updateItemQuantity(productId, quantityElement + 1);
-            checkoutPage(getCart()); // Re-render checkout page with updated cart
-        });
-    });
-
-    checkoutOrderSummarySection.querySelectorAll('.remove').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const productId = parseInt(e.target.dataset.id, 10);
-            removeItemFromCart(productId);
-            checkoutPage(getCart()); // Re-render checkout page with updated cart
-        });
-    }); */
 
 
     //Checkout complete button
