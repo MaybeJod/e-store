@@ -6,8 +6,13 @@ export default function resetContent() {
 	const productSection = document.querySelector("#productSection");
 	productSection.textContent = "";
 
+	const aboutTeamSection = document.querySelector(".meet-team");
+	aboutTeamSection.textContent = "";
+
 	const topRated = document.querySelector("#topRated");
 	topRated.textContent = "";
+	const topRatedGrid = document.querySelector(".grid-container");
+	topRatedGrid.textContent = "";
 
 	const cart = document.querySelector("#cart");
 	cart.textContent = "";

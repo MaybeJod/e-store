@@ -1,31 +1,36 @@
-import { updateItemQuantity, removeItemFromCart } from "./cart/cartOperations.js";
-import { getCart } from "./cart/cartOperations.js"; // 确保引入 getCart 函数
+/* import {
+	updateItemQuantity,
+	removeItemFromCart,
+} from "./cart/cartOperations.js";
+import { getCart } from "./cart/cartOperations.js";  */ // 确保引入 getCart 函数
+
+import resetContent from "./components/resetContent";
+import homeReset from "./components/home-reset";
 
 export default function checkoutPage(cart) {
-    const checkoutElement = document.getElementById('checkout');
-    if (checkoutElement) {
-        console.log('Checkout page is loaded');
-    }
-    if (!Array.isArray(cart)) {
-        console.error('Invalid cartItems:', cart);
-        return; // Exit if cartItems is not an array
-    }
+	const checkoutElement = document.getElementById("checkout");
+	if (checkoutElement) {
+		console.log("Checkout page is loaded");
+	}
+	if (!Array.isArray(cart)) {
+		console.error("Invalid cartItems:", cart);
+		return; // Exit if cartItems is not an array
+	}
 
+	const createForm = (title) => {
+		const checkoutFormContainer = document.createElement("div");
+		checkoutFormContainer.classList.add("checkout-form-container");
 
-    const createForm = (title) => {
-        const checkoutFormContainer = document.createElement('div');
-        checkoutFormContainer.classList.add('checkout-form-container');
+		const checkoutFormTitle = document.createElement("h2");
+		checkoutFormTitle.classList.add("checkout-form-title");
+		checkoutFormTitle.textContent = title;
 
-        const checkoutFormTitle = document.createElement('h2');
-        checkoutFormTitle.classList.add('checkout-form-title');
-        checkoutFormTitle.textContent = title;
+		const form = document.createElement("form");
+		form.id = "checkoutForm";
 
-        const form = document.createElement('form');
-        form.id = 'checkoutForm';
-
-        const customerInfoSection = document.createElement('div');
-        customerInfoSection.classList.add('checkout-section');
-        customerInfoSection.innerHTML = `
+		const customerInfoSection = document.createElement("div");
+		customerInfoSection.classList.add("checkout-section");
+		customerInfoSection.innerHTML = `
             <h3 class="checkout-customer-title" id="customerTitle">Customer Information</h3>
             <div class="checkout-input-group email" id="email-checkout">
                 <label for="email">Email</label>
@@ -60,22 +65,22 @@ export default function checkoutPage(cart) {
                 <input type="text" id="postal-code" name="postal-code" required>
             </div>
         `;
-        form.appendChild(customerInfoSection);
+		form.appendChild(customerInfoSection);
 
-        checkoutFormContainer.appendChild(checkoutFormTitle);
-        checkoutFormContainer.appendChild(form);
+		checkoutFormContainer.appendChild(checkoutFormTitle);
+		checkoutFormContainer.appendChild(form);
 
-        return checkoutFormContainer;
-    };
+		return checkoutFormContainer;
+	};
 
-    const checkoutContentContainer = document.createElement('div');
-    checkoutContentContainer.classList.add('checkout-content-container');
-    checkoutContentContainer.appendChild(createForm('Checkout Form'));
+	const checkoutContentContainer = document.createElement("div");
+	checkoutContentContainer.classList.add("checkout-content-container");
+	checkoutContentContainer.appendChild(createForm("Checkout Form"));
 
-    //Payment setion
-    const paymentMethodSection = document.createElement('div');
-    paymentMethodSection.classList.add('checkout-payment-section');
-    paymentMethodSection.innerHTML = `
+	//Payment setion
+	const paymentMethodSection = document.createElement("div");
+	paymentMethodSection.classList.add("checkout-payment-section");
+	paymentMethodSection.innerHTML = `
         <h3 class="payment-section-title">Payment Details</h3>
         
         <div class="payment-section-options">
@@ -153,55 +158,54 @@ export default function checkoutPage(cart) {
             <input type="text" id="cvc" name="cvc" placeholder="123" required>
         </div>
     `;
-    checkoutContentContainer.appendChild(paymentMethodSection);
+	checkoutContentContainer.appendChild(paymentMethodSection);
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const defalutButtonColor = 'var(--defalut-button-color)';
-        //click the paypal button to remove the card number, expiry date, and cvc
-        const changeButton = document.querySelector('.paypal-btn');
-        const removeCardNumber = document.querySelector('#checkout-cardnumber');
-        const removeExpiryDate = document.querySelector('#expiry-date');
-        const removeCvc = document.querySelector('#cvc');
-        const creditCardBtn = document.querySelector('.creditCard-btn');
-    
-        if (changeButton) {
-            changeButton.addEventListener('click', () => {
-                changeButton.style.backgroundColor = 'var(--main-yellow)';
-                creditCardBtn.style.backgroundColor = defalutButtonColor;
-                removeCardNumber.style.display = 'none';
-                removeExpiryDate.style.display = 'none';
-                removeCvc.style.display = 'none';
-            });
-        } else {
-            console.error('One or more elements could not be found.');
-        }
+	document.addEventListener("DOMContentLoaded", () => {
+		const defalutButtonColor = "var(--defalut-button-color)";
+		//click the paypal button to remove the card number, expiry date, and cvc
+		const changeButton = document.querySelector(".paypal-btn");
+		const removeCardNumber = document.querySelector("#checkout-cardnumber");
+		const removeExpiryDate = document.querySelector("#expiry-date");
+		const removeCvc = document.querySelector("#cvc");
+		const creditCardBtn = document.querySelector(".creditCard-btn");
 
-        //click the credit card button to show the card number, expiry date, and cvc
-        if (creditCardBtn) {
-            creditCardBtn.addEventListener('click', () => {
-                creditCardBtn.style.backgroundColor = 'var(--main-yellow)';
-                changeButton.style.backgroundColor = defalutButtonColor;
-                removeCardNumber.style.display = 'block';
-                removeExpiryDate.style.display = 'block';
-                removeCvc.style.display = 'block';
-            });
-        }
-    });
+		if (changeButton) {
+			changeButton.addEventListener("click", () => {
+				changeButton.style.backgroundColor = "var(--main-yellow)";
+				creditCardBtn.style.backgroundColor = defalutButtonColor;
+				removeCardNumber.style.display = "none";
+				removeExpiryDate.style.display = "none";
+				removeCvc.style.display = "none";
+			});
+		} else {
+			console.error("One or more elements could not be found.");
+		}
 
+		//click the credit card button to show the card number, expiry date, and cvc
+		if (creditCardBtn) {
+			creditCardBtn.addEventListener("click", () => {
+				creditCardBtn.style.backgroundColor = "var(--main-yellow)";
+				changeButton.style.backgroundColor = defalutButtonColor;
+				removeCardNumber.style.display = "block";
+				removeExpiryDate.style.display = "block";
+				removeCvc.style.display = "block";
+			});
+		}
+	});
 
-    //Order Summary
-    const checkoutOrderSummarySection = document.createElement('div');
-    checkoutOrderSummarySection.classList.add('checkout-order-summary-section');
-    // math logic of price summary
-        let subtotal = 0;
-        cart.forEach(item => {
-            const { id, title, price, quantity, image } = item;
-            subtotal += price * quantity;
-    
-            const itemElement = document.createElement("div");
-            itemElement.classList.add("cart-item");
-    
-            itemElement.innerHTML = `
+	//Order Summary
+	const checkoutOrderSummarySection = document.createElement("div");
+	checkoutOrderSummarySection.classList.add("checkout-order-summary-section");
+	// math logic of price summary
+	let subtotal = 0;
+	cart.forEach((item) => {
+		const { id, title, price, quantity, image } = item;
+		subtotal += price * quantity;
+
+		const itemElement = document.createElement("div");
+		itemElement.classList.add("cart-item");
+
+		itemElement.innerHTML = `
             <div class="item-image-container">
 				<img src="${image}" alt="${title}" class="cart-item-image" />
 			</div>
@@ -212,51 +216,54 @@ export default function checkoutPage(cart) {
 				<p class="item-price">$${price}</p>
 			</div>
             `;
-            checkoutOrderSummarySection.appendChild(itemElement);
-        });    
+		checkoutOrderSummarySection.appendChild(itemElement);
+	});
 
+	const deliveryFee = 15;
+	const total = subtotal + deliveryFee;
 
-        const deliveryFee = 15; 
-        const total = subtotal + deliveryFee;
-
-        checkoutOrderSummarySection.innerHTML += `
+	checkoutOrderSummarySection.innerHTML += `
             <div class="subtotal-all">
                 <div class="subtotal-a">Subtotal: $${subtotal.toFixed(2)}</div>
-                <div class="delivery-b">Delivery Fee: $${deliveryFee.toFixed(2)}</div>
+                <div class="delivery-b">Delivery Fee: $${deliveryFee.toFixed(
+									2
+								)}</div>
                 <div class="total-c">Total: $${total.toFixed(2)}</div>
             </div>
         `;
 
-        checkoutElement.appendChild(checkoutOrderSummarySection);
+	checkoutElement.appendChild(checkoutOrderSummarySection);
 
-        checkoutContentContainer.appendChild(checkoutOrderSummarySection);
+	checkoutContentContainer.appendChild(checkoutOrderSummarySection);
 
+	//Checkout complete button
+	const checkoutCompleteBtn = document.createElement("button");
+	checkoutCompleteBtn.classList.add("checkout-complete-Btn");
+	checkoutCompleteBtn.textContent = "Complete Order";
+	checkoutContentContainer.appendChild(checkoutCompleteBtn);
 
+	//pop up message
+	checkoutCompleteBtn.addEventListener("click", (event) => {
+		event.preventDefault();
 
-    //Checkout complete button
-    const checkoutCompleteBtn = document.createElement('button');
-    checkoutCompleteBtn.classList.add('checkout-complete-Btn');
-    checkoutCompleteBtn.textContent = 'Complete Order';
-    checkoutContentContainer.appendChild(checkoutCompleteBtn);
+		confirmPayment();
+	});
 
-    //pop up message
-    checkoutCompleteBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-
-        confirmPayment();
-    });
-
-    function confirmPayment() {
-        checkoutElement.innerHTML = `
+	function confirmPayment() {
+		checkoutElement.innerHTML = `
         <div class="checkout-complete-message">
             <h4>Order palced successfully!</h4>
             <p>You will receive a confirm email</p>
             <button id="checkout-backtohome">Back to Home</button>
         </div>
         `;
-    }
+		const checkoutHomeElement = document.querySelector("#checkout-backtohome");
+		checkoutHomeElement.addEventListener("click", () => {
+			resetContent();
+			homeReset();
+		});
+	}
 
-    //append all the content to the main checkout page
-    checkoutElement.appendChild(checkoutContentContainer);
+	//append all the content to the main checkout page
+	checkoutElement.appendChild(checkoutContentContainer);
 }
-

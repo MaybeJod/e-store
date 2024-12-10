@@ -6,9 +6,10 @@ import resetContent from "../components/resetContent.js";
 
 export default function renderCartPage() {
 	const mainContent = document.querySelector("#cart");
+	const cartButton = document.querySelector("#viewCartButton");
 
 	//fetchAndDisplayProducts(mainContent);
-	document.querySelector("#viewCartButton").addEventListener("click", () => {
+	cartButton.addEventListener("click", () => {
 		resetContent();
 		renderCart(mainContent);
 	});
