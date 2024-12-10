@@ -26,6 +26,7 @@ import resetContent from "./assets/js/components/resetContent.js";
 import homeReset from "./assets/js/components/home-reset.js";
 /* landing page products */
 import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js";
+
 import {
 	registerLowToHigh,
 	registerHighToLow,
@@ -36,6 +37,7 @@ import {
 import { createLandingPage } from "./assets/js/landingPage.js";
 import { createTrendingSection } from "./assets/js/trendingProducts.js";
 import { createTopRatedGrid } from "./assets/js/landing-page/topRated.js";
+import { createTopRatedproducts} from "./assets/js/topRatedInHeaderSection.js";
 
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
@@ -79,6 +81,8 @@ function productButtons() {
 				registerHighToLow(highToLowPrice, products);
 				const filterByRating = document.querySelector("#filter_ratingBtn");
 				sortOnTheBasisOfRating(filterByRating, products);
+
+				
 			});
 		});
 	});
@@ -163,3 +167,9 @@ function productButtons() {
 		});
 	});
 }
+const topRatedHeading = document.querySelector('#topRated_products');
+topRatedHeading.addEventListener('click', ()=>{
+	resetContent();
+	//createTopRatedGrid('https://fakestoreapi.com/products');
+	createTopRatedproducts('https://fakestoreapi.com/products')
+});
