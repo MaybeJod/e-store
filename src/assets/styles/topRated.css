@@ -82,7 +82,7 @@
 }
 
 
-@media (max-width: 375px) {
+
     @media (max-width: 375px) {
         .trending {
             font-size: 2rem;
@@ -122,4 +122,5 @@
         }
     }
     
+
 }
