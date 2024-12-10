@@ -67,7 +67,7 @@ const checkoutButton = document.querySelector('#checkoutButton')
 checkoutButton.addEventListener('click', () => {
 	console.log('Checkout button clicked');
 	resetContent();
-	checkoutPage();
+	checkoutPage(cart);
 })
 
 
@@ -103,17 +103,3 @@ checkoutButton.addEventListener('click', () => {
 	});
 }
 
-/* //attach checkoutpage button eventlistener
-
-document.addEventListener('DOMContentLoaded', () => {
-	const checkoutBtn = document.querySelector('#checkoutButton');
-	if (checkoutBtn) {
-		checkoutBtn.addEventListener('click', () => {
-		console.log('Checkout button clicced');
-		resetContent();
-		checkoutPage();
-		}); 
-	} else {
-		console.warn('checkout button not found');
-	}
-}); */

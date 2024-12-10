@@ -355,3 +355,40 @@
 }
 
 
+.cart-item-details.cart-con {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cart-item-details.cart-con h3 {
+    font-family: var(--heading-font);
+}
+
+.cart-item-details.cart-con p,
+.cart-item-details.cart-con button {
+    font-family: var(--body-font);
+    font-weight: 600;
+}
+
+.decrease,
+.increase {
+    border-radius: 50px;
+    background-color: var(--main-black);
+    color: var(--main-white);
+}
+
+.subtotal-a,
+.delivery-b,
+.total-c {
+    margin-bottom: 10px;
+    align-self: flex-end;
+}
+
+.subtotal-all {
+    font-family: var(--body-font);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}

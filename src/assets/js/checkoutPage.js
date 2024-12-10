@@ -1,4 +1,10 @@
-export default function checkoutPage() {
+import {
+	getCart,
+	updateItemQuantity,
+	removeItemFromCart,
+} from "./cart/cartOperations";
+
+export default function checkoutPage(cartItems) {
     const checkoutElement = document.getElementById('checkout');
     if (checkoutElement) {
         console.log('Checkout page is loaded');
@@ -184,87 +190,77 @@ export default function checkoutPage() {
     //Order Summary
     const checkoutOrderSummarySection = document.createElement('div');
     checkoutOrderSummarySection.classList.add('checkout-order-summary-section');
-    checkoutOrderSummarySection.innerHTML = `
-        <h3 class="checkout-ordersummary-title">Order Summary</h3>
-        <div class="checkout-ordersunmmary">
-            <div class="order-summary-item">
-                <div>
-                    <img src="">
-                </div>
-                <div class="order-summary-words">
-                    <span>Sample Product</span>
-                    <div>
-                        <button class="decrease-btn">-</button>
-                        <span class="quantity" data-price="99.99">1</span>
-                        <button class="increase-btn">+</button>
-                    </div>
-                    <span class="price">$99.99</span>
-                </div>    
-            </div>
-            <div class="order-summary-item">
-                <div>
-                    <img src="">
-                </div>
-                <div class="order-summary-words">
-                    <span>Sample Product</span>
-                    <div>
-                        <button class="decrease-btn">-</button>
-                        <span class="quantity" data-price="99.98">2</span>
-                        <button class="increase-btn">+</button>
-                    </div>
-                    <span class="price">$99.98</span>
-                </div>
-            </div>
-            <div class="order-subtotal">
-                <strong>Subtotal</strong>
-                <strong class="subtotal">$199.97</strong>
-            </div>
-            <div class="order-shipping">
-                <strong>Shipping</strong>
-                <span>$10</span>
-            </div>
-            <div class="order-total">
-                <strong>Total</strong>
-                <strong class="total">$209.97</strong>
-            </div>
-        </div>
-    `;
-    checkoutContentContainer.appendChild(checkoutOrderSummarySection);
-
     // math logic of price summary
-    const updatePrices = () => {
         let subtotal = 0;
-        document.querySelectorAll('.order-summary-item').forEach(item => {
-            const quantity = parseInt(item.querySelector('.quantity').textContent);
-            const price = parseFloat(item.querySelector('.quantity').dataset.price);
-            const itemTotal = quantity * price;
-            item.querySelector('.price').textContent = `$${itemTotal.toFixed(2)}`;
-            subtotal += itemTotal;
-        });
-        document.querySelector('.subtotal').textContent = `$${subtotal.toFixed(2)}`;
-        const shipping = 10; 
-        const total = subtotal + shipping;
-        document.querySelector('.total').textContent = `$${total.toFixed(2)}`;
-    };
+        cartItems.forEach(item => {
+            const { id, title, price, quantity, image } = item;
+            subtotal += price * quantity;
+    
+            const itemElement = document.createElement("div");
+            itemElement.classList.add("cart-item");
+    
+            itemElement.innerHTML = `
+                <img src="${image}" alt="${title}" class="cart-item-image click1" />
+                <div class="cart-item-details cart-con">
+                    <h3>${title}</h3>
+                    <p>Price: $${price}</p>
+                    <p>Quantity: ${quantity}</p>
+                    <button class="decrease" data-id="${id}">-</button>
+                    <span>${quantity}</span>
+                    <button class="increase" data-id="${id}">+</button>
+                    <button class="remove" data-id="${id}">Remove</button>
+                </div>
+            `;
+            checkoutOrderSummarySection.appendChild(itemElement);
+        });    
 
-    checkoutOrderSummarySection.querySelectorAll('.increase-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const quantitySpan = button.previousElementSibling;
-            quantitySpan.textContent = parseInt(quantitySpan.textContent) + 1;
-            updatePrices();
-        });
-    });
 
-    checkoutOrderSummarySection.querySelectorAll('.decrease-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const quantitySpan = button.nextElementSibling;
-            const currentQuantity = parseInt(quantitySpan.textContent);
-            if (currentQuantity > 0) {
-                quantitySpan.textContent = currentQuantity - 1;
-                updatePrices();
-            }
-        });
-    });
+        const deliveryFee = 15; 
+        const total = subtotal + deliveryFee;
+
+        checkoutOrderSummarySection.innerHTML += `
+            <div class="subtotal-all">
+                <div class="subtotal-a">Subtotal: $${subtotal.toFixed(2)}</div>
+                <div class="delivery-b">Delivery Fee: $${deliveryFee.toFixed(2)}</div>
+                <div class="total-c">Total: $${total.toFixed(2)}</div>
+            </div>
+        `;
+
+        checkoutElement.appendChild(checkoutOrderSummarySection);
+
+        checkoutContentContainer.appendChild(checkoutOrderSummarySection);
+
+    //event listener
+/*     checkoutOrderSummarySection.querySelectorAll(".decrease").forEach((button) => {
+		button.addEventListener("click", (e) => {
+			const productId = parseInt(e.target.dataset.id, 10);
+			updateItemQuantity(
+				productId,
+				getCart().find((item) => item.id === productId).quantity - 1
+			);
+			checkoutPage(cartItems); // Re-render
+		});
+	});
+
+	checkoutOrderSummarySection.querySelectorAll(".increase").forEach((button) => {
+		button.addEventListener("click", (e) => {
+			const productId = parseInt(e.target.dataset.id, 10);
+			updateItemQuantity(
+				productId,
+				getCart().find((item) => item.id === productId).quantity + 1
+			);
+			checkoutPage(cartItems); // Re-render
+		});
+	});
+
+	checkoutOrderSummarySection.querySelectorAll(".remove").forEach((button) => {
+		button.addEventListener("click", (e) => {
+			const productId = parseInt(e.target.dataset.id, 10);
+			removeItemFromCart(productId);
+			checkoutPage(cartItems); // Re-render
+		});
+	}); */
+
 
     //Checkout complete button
     const checkoutCompleteBtn = document.createElement('button');
