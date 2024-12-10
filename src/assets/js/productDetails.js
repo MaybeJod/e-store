@@ -21,7 +21,7 @@ export default async function fetchProductDetails(productId) {
             <h1 id="product_heading">${product.title}</h1>
             <p id ="product_discription">${product.description}</p>
             <p id="product_price"><strong>$${product.price}</strong></p>
-            <p class="product-rating">Rating(Stars): ${product.rating.rate} (${product.rating.count})</p>
+            <p class="product-rating">Rating: ${product.rating.rate} (${product.rating.count})</p>
             <button id="AddToCart_btn" class="add-to-cart">Add To Cart</button>
           </div>
     `;
