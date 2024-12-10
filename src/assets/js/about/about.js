@@ -1,12 +1,15 @@
 /* imgs */
 import ash from "./about_assets/ash.png";
-import jod from "./about_assets/jod.JPG";
+import jod from "./about_assets/jod03.png";
 import swarna from "./about_assets/swarna.png";
+import anitha from "./about_assets/anitha01.png";
+import mohamed from "./about_assets/mohamed 02.png"
 
 /* svg */
 import githubSvg from "./about_assets/github.svg";
 import instaSvg from "./about_assets/insta01.svg";
 import linkedinSvg from "./about_assets/linkedin01.svg";
+
 
 const teamMembers = [
 	{
@@ -38,7 +41,7 @@ const teamMembers = [
 		role: "Head Trainer",
 		description:
 			"With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures.",
-		image: "./assets/04swarna.png",
+		image: anitha,
 		social: {
 			linkedin: "https://linkedin.com/in/swarnalekha",
 			instagram: "https://instagram.com/swarnalekha",
@@ -62,7 +65,7 @@ const teamMembers = [
 		role: "Head Trainer",
 		description:
 			"With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures.",
-		image: "./assets/04swarna.png",
+		image: mohamed,
 		social: {
 			linkedin: "https://linkedin.com/in/swarnalekha",
 			instagram: "https://instagram.com/swarnalekha",
