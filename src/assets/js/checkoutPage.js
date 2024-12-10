@@ -211,8 +211,7 @@ export default function checkoutPage(cart) {
 			</div>
 			<div class="cart-item-details">
 				<h3>${title}</h3>
-				<p class="item-meta">Size: Large</p>
-				<p class="item-meta">Color: White</p>
+				<p class="item-price">Quantity: ${quantity}</p>
 				<p class="item-price">$${price}</p>
 			</div>
             `;
