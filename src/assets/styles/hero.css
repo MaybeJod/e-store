@@ -23,29 +23,42 @@
     margin-bottom: 0;
     margin-top: 0;
 }
-.hero-left a{
+.hero-left a {
   display: flex;
   font-size: 2rem;
   justify-content: center;
   align-items: center;
-  background-color: #ffff00;
-  color: #000000;
+  background-color: #ffff00; /* Yellow background */
+  color: #000000; /* Black text */
   margin-left: 2%;
   margin-right: 60%;
   padding: 2%;
+  border: 2px solid #000000; /* Add a border for better visibility */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+.hero-left a:hover {
+  background-color: #000000; /* Switch to black background */
+  color: #ffff00; /* Switch to yellow text */
+  border-color: #ffff00; /* Invert the border color */
+}
+
+ 
 
 .hero-right{
     flex: 1;
     max-width: 40%;
     justify-content: flex-end;
+      position: relative;
 }
 
 .hero-right img{
-    justify-content: flex-end;
-    position: relative;
-    width: 85%;
-    margin-left: 10%;
+  position: absolute; /* Position it relative to its nearest positioned ancestor */
+  z-index: -1;
+  justify-content: flex-end;
+  position: relative;
+  width: 85%;
+  margin-left: 10%;
 }
 
 .hero-right h3{
@@ -240,9 +253,9 @@ padding: 1%;
 .hero-right h3{
 
 font-size: 0.8rem;
-top: 180px;
+top: 130px;
 
-right: 23px;
+right: 0px;
 
 }
 

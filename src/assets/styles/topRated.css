@@ -94,12 +94,12 @@
         gap: 10px;
         width: 100%;
         max-width: 1200px;
-        padding: 0px;
+        margin-left: 0%;
     }
 
 
 .product-info p {
-    font-size: 0.9em;
+    font-size: 0.5em;
     color: #333;
     margin: 0px;
 }

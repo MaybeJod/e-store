@@ -90,3 +90,17 @@ cursor: pointer;
   width: 95%;
   
 }
+
+@media only screen and (max-width: 375px) {
+  .complete_div{
+    flex-direction: column;
+  }
+
+  .nav-drop-button{
+    width: 18rem;
+  }
+
+  .nav-dropdown-content{
+    width: 18rem;
+  }
+}

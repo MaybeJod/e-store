@@ -55,4 +55,11 @@
   text-align: center;
   font-family: var(--heading-font);
   text-transform: uppercase;
+  color: black;
+}
+
+@media (max-width: 375px) {
+  #header_topRated{
+    font-size: 2rem;
+  }
 }

@@ -3,16 +3,23 @@
   flex-direction: column;
   gap: 2rem;
 }
-.allProducts_btn{
+.allProducts_btn {
   width: 35%;
   height: 3rem;
-  background-color:var(--main-yellow);
+  background-color: var(--main-yellow);
   align-self: center;
   color: rgb(0, 0, 0);
   font-size: 1.5rem;
   font-family: var(--heading-font);
   margin-top: 5%;
+  border: 2px solid var(--main-black); /* Add a border for better contrast */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 
+.allProducts_btn:hover {
+  background-color: var(--main-black); /* Switch to black background */
+  color: var(--main-yellow); /* Switch to yellow text */
+  border-color: var(--main-yellow); /* Invert the border color */
 }
  
 .lp_productCategory{
@@ -52,7 +59,9 @@
   gap: 20px;
   width: 60%;
   margin-left: 1rem ;
+  
 }
+
   .category{
     height: 400px;
     width: 300px;
@@ -60,7 +69,14 @@
 
     box-shadow: 5px 5px 10px 5px rgba(208, 208, 203, 0.9);
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   }
+
+
+.category:hover {
+  transform: scale(1.05); /* Makes the card 10% larger */
+  box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2); /* Enhances shadow on hover */
+}
     .category_Image{
       height: 20rem;  
       width: 30rem;
