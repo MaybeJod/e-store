@@ -12,7 +12,7 @@
             "f g h";
         gap: 1rem; 
         width: 100%;
-        max-width: 600px;
+        width: 60vw;
         margin-top: 2rem;
     }
     /* css of customer info details */
@@ -122,7 +122,7 @@
         "dd ee";
         gap: 1rem; 
         width: 100%;
-        max-width: 600px;
+        width: 60vw;
         margin-top: 2rem;
     }
     
@@ -137,7 +137,7 @@
         grid-area: bb;
         display: flex;
         gap: 1rem;
-        max-width: 600px;
+        max-width: 60vw;
         justify-content: space-evenly;
     }
 
@@ -167,7 +167,7 @@
         color: var(--main-black);
         font-size: 1rem;
         cursor: pointer;
-        width: 290px;
+        width: 20vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -217,7 +217,7 @@
     padding: 1.5rem;
     background-color: #f9fafb;
     border-radius: 20px;
-    max-width: 600px;
+    max-width: 60vw;
     margin-top: 2rem;
 }
 
@@ -271,7 +271,7 @@
     color: var(--main-black);
     font-size: 1rem;
     cursor: pointer;
-    width: 600px;
+    width: 42vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -291,8 +291,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
-    max-height: 300px;
+    max-width: 80vw;
+    max-height: 30vw;
     background-color: var(--main-black);
     color: var(--main-white);
     border-radius: 1.5rem;
@@ -311,7 +311,7 @@
     color: var(--main-black);
     font-size: 1rem;
     cursor: pointer;
-    width: 290px;
+    width: 29vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -387,4 +387,79 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+}
+
+@media (max-width: 1280px) {
+    .checkout-content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .checkout-order-summary-section {
+        align-self: center;
+        width: 60vw;
+    }
+
+    .checkout-complete-message button {
+        width: 60vw;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .checkout-customer-title {
+        font-size: 3.5vw;
+    }
+
+    .checkout-section {
+        width: 80vw;
+    }
+
+    .checkout-input-group email,
+    #address,
+    #city,
+    #country,
+    #postalCode {
+        font-size: 3.5vw;
+    }
+
+    #firstName label{
+        font-size: 3.5vw;
+        justify-content: center;
+    }
+
+    #lastName {
+        justify-content: center;
+        font-size: 3.5vw;
+        align-self: flex-end;
+    }
+
+    .checkout-payment-section {
+        width: 80vw;
+    }
+
+    .payment-section-title {
+        font-size: 3.5vw;
+    }
+
+    .payment-section-options button {
+        font-size: 3.5vw;
+    }
+
+    .payment-section-options {
+        align-self: center;
+    }
+
+    .creditCard-words,
+    .paypal-words {
+        display: none;
+    }
+
+    .payment-section-options button span,
+    #checkout-cardnumber label,
+    #expiry-date label,
+    #cvc label {
+        font-size: 3.5vw;
+    }
 }
