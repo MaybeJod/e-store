@@ -11,7 +11,7 @@ export function displayCategoriesOnLandingPage(){
 
   const heading = document.createElement("h2");
   heading.classList.add("categories_heading");
-  heading.innerText = "Feel-Good by finding good......LET'S SEACH BY YOUR CHOICE!!"
+  heading.innerText = "CATEGORIES"
   productByCategoriesContainer.prepend(heading);
 
   const categoriesDiv = document.createElement("div");
