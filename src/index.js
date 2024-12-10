@@ -8,6 +8,7 @@ import "./assets/styles/topRated.css";
 import "./assets/styles/products.css";
 import "./assets/styles/productDetails.css";
 import "./assets/styles/filterFunction.css";
+import "./assets/js/about/about2.css";
 /* product section css*/
 import "./assets/styles/productSection.css";
 
@@ -26,6 +27,7 @@ import resetContent from "./assets/js/components/resetContent.js";
 import homeReset from "./assets/js/components/home-reset.js";
 /* landing page products */
 import { displayCategoriesOnLandingPage } from "./assets/js/productDisplay_LP.js";
+
 import {
 	registerLowToHigh,
 	registerHighToLow,
@@ -36,6 +38,7 @@ import {
 import { createLandingPage } from "./assets/js/landingPage.js";
 import { createTrendingSection } from "./assets/js/trendingProducts.js";
 import { createTopRatedGrid } from "./assets/js/landing-page/topRated.js";
+import { createTopRatedproducts} from "./assets/js/topRatedInHeaderSection.js";
 
 /* sort products */
 import { sortProducts } from "./assets/js/productCategories";
@@ -43,11 +46,21 @@ import { sortProducts } from "./assets/js/productCategories";
 /* cart */
 import renderCartPage from "./assets/js/cart/cartPage.js";
 
+/* meet the team */
+import renderMeetTeam from "./assets/js/about/about.js";
+
 /* when user clicks on nav logo */
 const homeElement = document.querySelector("#home-reset");
 homeElement.addEventListener("click", () => {
 	resetContent();
 	homeReset();
+});
+
+/* meet the team call */
+const aboutButton = document.querySelector(".nav-about-us");
+aboutButton.addEventListener("click", () => {
+	resetContent();
+	renderMeetTeam();
 });
 
 /* run cart function*/
@@ -57,7 +70,7 @@ renderCartPage();
 document.addEventListener("DOMContentLoaded", () => {
 	createLandingPage();
 	createTrendingSection();
-	createTopRatedGrid('https://fakestoreapi.com/products');
+	createTopRatedGrid("https://fakestoreapi.com/products");
 	displayCategoriesOnLandingPage();
 	productButtons();
 });
@@ -79,6 +92,8 @@ function productButtons() {
 				registerHighToLow(highToLowPrice, products);
 				const filterByRating = document.querySelector("#filter_ratingBtn");
 				sortOnTheBasisOfRating(filterByRating, products);
+
+				
 			});
 		});
 	});
@@ -163,3 +178,9 @@ function productButtons() {
 		});
 	});
 }
+const topRatedHeading = document.querySelector('#topRated_products');
+topRatedHeading.addEventListener('click', ()=>{
+	resetContent();
+	//createTopRatedGrid('https://fakestoreapi.com/products');
+	createTopRatedproducts('https://fakestoreapi.com/products')
+});

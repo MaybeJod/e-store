@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Fake E-store</title>
+		<title>JASMIZ E-store</title>
 	</head>
 	<body>
 		<nav>
@@ -41,7 +41,7 @@
 							</ul>
 						</div>
 					</div>
-					<span>Top Rated</span>
+					<span id="topRated_products">Top Rated</span>
 					<button class="nav-about-us">About us</button>
 				</div>
 				<div class="nav-personal-links">
@@ -56,7 +56,9 @@
 							alt="profile icon" />
 					</div>
 					<div class="nav-shopping-cart">
-						<button id="viewCartButton" style="background-color: transparent;border:none">
+						<button
+							id="viewCartButton"
+							style="background-color: transparent; border: none">
 							<img
 								src="./assets/icons-and-logo/Shopping-Cart-Icon.svg"
 								alt="shopping cart" />
@@ -69,6 +71,7 @@
 			<section id="heroSection"></section>
 			<section id="productSection"></section>
 			<section id="topRated" class="grid-container"></section>
+			<section class="meet-team"></section>
 			<section id="cart"></section>
 			<section id="checkout"></section>
 		</main>

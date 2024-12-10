@@ -1,8 +1,16 @@
-export default function checkoutPage() {
+import { updateItemQuantity, removeItemFromCart } from "./cart/cartOperations.js";
+import { getCart } from "./cart/cartOperations.js"; // 确保引入 getCart 函数
+
+export default function checkoutPage(cart) {
     const checkoutElement = document.getElementById('checkout');
     if (checkoutElement) {
         console.log('Checkout page is loaded');
     }
+    if (!Array.isArray(cart)) {
+        console.error('Invalid cartItems:', cart);
+        return; // Exit if cartItems is not an array
+    }
+
 
     const createForm = (title) => {
         const checkoutFormContainer = document.createElement('div');
@@ -184,87 +192,90 @@ export default function checkoutPage() {
     //Order Summary
     const checkoutOrderSummarySection = document.createElement('div');
     checkoutOrderSummarySection.classList.add('checkout-order-summary-section');
-    checkoutOrderSummarySection.innerHTML = `
-        <h3 class="checkout-ordersummary-title">Order Summary</h3>
-        <div class="checkout-ordersunmmary">
-            <div class="order-summary-item">
-                <div>
-                    <img src="">
-                </div>
-                <div class="order-summary-words">
-                    <span>Sample Product</span>
-                    <div>
-                        <button class="decrease-btn">-</button>
-                        <span class="quantity" data-price="99.99">1</span>
-                        <button class="increase-btn">+</button>
-                    </div>
-                    <span class="price">$99.99</span>
-                </div>    
-            </div>
-            <div class="order-summary-item">
-                <div>
-                    <img src="">
-                </div>
-                <div class="order-summary-words">
-                    <span>Sample Product</span>
-                    <div>
-                        <button class="decrease-btn">-</button>
-                        <span class="quantity" data-price="99.98">2</span>
-                        <button class="increase-btn">+</button>
-                    </div>
-                    <span class="price">$99.98</span>
-                </div>
-            </div>
-            <div class="order-subtotal">
-                <strong>Subtotal</strong>
-                <strong class="subtotal">$199.97</strong>
-            </div>
-            <div class="order-shipping">
-                <strong>Shipping</strong>
-                <span>$10</span>
-            </div>
-            <div class="order-total">
-                <strong>Total</strong>
-                <strong class="total">$209.97</strong>
-            </div>
-        </div>
-    `;
-    checkoutContentContainer.appendChild(checkoutOrderSummarySection);
-
     // math logic of price summary
-    const updatePrices = () => {
         let subtotal = 0;
-        document.querySelectorAll('.order-summary-item').forEach(item => {
-            const quantity = parseInt(item.querySelector('.quantity').textContent);
-            const price = parseFloat(item.querySelector('.quantity').dataset.price);
-            const itemTotal = quantity * price;
-            item.querySelector('.price').textContent = `$${itemTotal.toFixed(2)}`;
-            subtotal += itemTotal;
-        });
-        document.querySelector('.subtotal').textContent = `$${subtotal.toFixed(2)}`;
-        const shipping = 10; 
-        const total = subtotal + shipping;
-        document.querySelector('.total').textContent = `$${total.toFixed(2)}`;
-    };
+        cart.forEach(item => {
+            const { id, title, price, quantity, image } = item;
+            subtotal += price * quantity;
+    
+            const itemElement = document.createElement("div");
+            itemElement.classList.add("cart-item");
+    
+            itemElement.innerHTML = `
+            <div class="item-image-container">
+				<img src="${image}" alt="${title}" class="cart-item-image" />
+			</div>
+			<div class="cart-item-details">
+				<h3>${title}</h3>
+				<p class="item-meta">Size: Large</p>
+				<p class="item-meta">Color: White</p>
+				<p class="item-price">$${price}</p>
+			</div>
+			<div class="quantity-controls">
+				<button class="quantity-button decrease" data-id="${id}">-</button>
+				<span class="quantity">${quantity}</span>
+				<button class="quantity-button increase" data-id="${id}">+</button>
+			</div>
+			<button class="remove" data-id="${id}">🗑️</button>
+            `;
+            checkoutOrderSummarySection.appendChild(itemElement);
+        });    
 
-    checkoutOrderSummarySection.querySelectorAll('.increase-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const quantitySpan = button.previousElementSibling;
-            quantitySpan.textContent = parseInt(quantitySpan.textContent) + 1;
-            updatePrices();
-        });
-    });
 
-    checkoutOrderSummarySection.querySelectorAll('.decrease-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const quantitySpan = button.nextElementSibling;
-            const currentQuantity = parseInt(quantitySpan.textContent);
-            if (currentQuantity > 0) {
-                quantitySpan.textContent = currentQuantity - 1;
-                updatePrices();
+        const deliveryFee = 15; 
+        const total = subtotal + deliveryFee;
+
+        checkoutOrderSummarySection.innerHTML += `
+            <div class="subtotal-all">
+                <div class="subtotal-a">Subtotal: $${subtotal.toFixed(2)}</div>
+                <div class="delivery-b">Delivery Fee: $${deliveryFee.toFixed(2)}</div>
+                <div class="total-c">Total: $${total.toFixed(2)}</div>
+            </div>
+        `;
+
+        checkoutElement.appendChild(checkoutOrderSummarySection);
+
+        checkoutContentContainer.appendChild(checkoutOrderSummarySection);
+
+    //event listener
+/*     checkoutOrderSummarySection.querySelectorAll('.decrease').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productId = parseInt(e.target.dataset.id, 10);
+            const itemElement = e.target.closest('.cart-item');
+            const quantityElement = itemElement.querySelector('.quantity'); // Select the quantity element
+
+            if (quantityElement) { // Check if quantityElement exists
+                const currentQuantity = parseInt(quantityElement.textContent, 10);
+                if (currentQuantity > 1) {
+                    updateItemQuantity(productId, currentQuantity - 1);
+                } else {
+                    removeItemFromCart(productId);
+                }
+                checkoutPage(getCart()); // Re-render checkout page with updated cart
+            } else {
+                console.error('Quantity element not found for product ID:', productId);
             }
         });
     });
+
+    checkoutOrderSummarySection.querySelectorAll('.increase').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productId = parseInt(e.target.dataset.id, 10);
+            const itemElement = e.target.closest('.cart-item');
+            const quantityElement = parseInt(itemElement.querySelector('.quantity').textContent, 10);
+            updateItemQuantity(productId, quantityElement + 1);
+            checkoutPage(getCart()); // Re-render checkout page with updated cart
+        });
+    });
+
+    checkoutOrderSummarySection.querySelectorAll('.remove').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productId = parseInt(e.target.dataset.id, 10);
+            removeItemFromCart(productId);
+            checkoutPage(getCart()); // Re-render checkout page with updated cart
+        });
+    }); */
+
 
     //Checkout complete button
     const checkoutCompleteBtn = document.createElement('button');
